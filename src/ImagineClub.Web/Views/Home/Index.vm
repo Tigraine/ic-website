@@ -1,0 +1,20 @@
+﻿#foreach($post in $news)
+#set ($day = $post.PostDate.ToString("dd") )
+#set ($month = $post.PostDate.ToString("MM") )
+#set ($year = $post.PostDate.ToString("yy") )
+<div class="post">
+    <div class="date">
+        <span class="day">$day</span><span class="month">$month</span>
+        <hr />
+        <span class="year">$year</span>
+    </div>
+    <h2><a href="$UrlHelper.For("%{action='Detail', querystring='id=$post.Id'}")">$post.Title</a></h2>
+    <sup>geschrieben von <a href="mailto:$post.PostedBy.Email.Replace('@', '[at]')">$post.PostedBy.PersonalInformation.Firstname $post.PostedBy.PersonalInformation.Lastname</a></sup>
+    $HtmlStringHelper.WrapInParagraph( $HtmlStringHelper.ShortenText( ${post.Text} ))
+</div>
+#end
+
+<div class="pagination">
+#if($news.HasPreviousPage)  $PaginationHelper.CreatePageLink( $news.PreviousPageIndex, "&laquo;Neuere Beiträge", "%{class='previous'}" ) #end
+#if($news.HasNextPage)  $PaginationHelper.CreatePageLink( $news.NextPageIndex, "Ältere Beiträge&raquo;", "%{class='next'}" ) #end
+</div>

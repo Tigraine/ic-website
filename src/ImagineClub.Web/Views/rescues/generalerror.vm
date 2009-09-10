@@ -1,0 +1,30 @@
+﻿#macro(showexception $exc)
+<b>$exc.GetType().Name</b>
+
+Message:
+$exc.Message
+
+#if($exc.StackTrace)
+StackTrace:
+$exc.StackTrace
+#end
+
+#if($exc.InnerException)
+<b>Inner exception:</b>
+#set($inner = $exc.InnerException)
+#showexception($inner)
+#end
+#end
+    
+<div class="exception">
+    <h1>Fehler!</h1>
+
+    <p>Ein unerwarteter Fehler ist aufgetreten.</p>
+    <br />
+    <p>Detaillierte Fehler Beschreibung:</p>
+<pre>
+#set($exception = $context.LastException)
+#showexception($exception)
+</pre>
+
+</div>

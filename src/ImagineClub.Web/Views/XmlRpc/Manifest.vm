@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<manifest xmlns="http://schemas.microsoft.com/wlw/manifest/weblog">
+    <options>
+        <clientType>Metaweblog</clientType>
+        <supportsPages>No</supportsPages>
+        <supportsCategories>No</supportsCategories>
+        <supportsEmbeds>Yes</supportsEmbeds>
+        <supportsPostAsDraft>No</supportsPostAsDraft>
+        <requiresXHTML>Yes</requiresXHTML>
+        <requiresHtmlTitles>No</requiresHtmlTitles>
+        <supportsEmptyTitles>No</supportsEmptyTitles>
+        <supportsAutoUpdate>Yes</supportsAutoUpdate>
+        <supportsExtendedEntries>Yes</supportsExtendedEntries>
+    </options>
+    
+    <weblog>
+        <serviceName>imagineClub</serviceName>
+        <homepageLinkText>View imagineClub Site</homepageLinkText>
+        <adminLinkText>Online admin</adminLinkText>
+        <adminUrl>{blog-homepage-url}</adminUrl>
+    </weblog>
+</manifest>

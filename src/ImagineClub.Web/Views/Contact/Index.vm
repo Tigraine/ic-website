@@ -1,0 +1,24 @@
+<h1>Kontakt mit dem iC aufnehmen</h1>
+<p>Wir sind sehr an Ihrem Feedback interessiert. Sie können mit dem folgenden Formular ein Email an <a href="mailto:vorstand@imagineclub.at">vorstand@imagineclub.at</a> senden</p>
+
+#if ($error)
+    <p>ERROR!</p>
+#end
+
+<form method="post" action="$UrlHelper.For("%{action='Index'}")">
+<fieldset>
+    <img src="/Content/images/email_edit.png" alt="Email icon" /><h3>Kontakt formular</h3>
+    <legend>Kontakt formular</legend>
+    <ol>
+        <li>$FormHelper.LabelFor("ContactRequest.Name", "Name")
+        $FormHelper.TextField("ContactRequest.Name")</li>
+        <li>$FormHelper.LabelFor("ContactRequest.Email", "Email")
+        $FormHelper.TextField("ContactRequest.Email")</li>
+        <li>$FormHelper.LabelFor("ContactRequest.Subject", "Subject")
+        $FormHelper.TextField("ContactRequest.Subject")</li>
+        <li>$FormHelper.LabelFor("ContactRequest.Text", "Nachricht")
+        $FormHelper.TextArea("ContactRequest.Text", "%{rows='14', cols='0'}")</li>
+    </ol>
+    <input type="submit" id="submit" value="Senden" />
+</fieldset>
+</form>

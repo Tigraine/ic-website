@@ -1,0 +1,44 @@
+﻿#set ($day = $post.PostDate.ToString("dd") )
+#set ($month = $post.PostDate.ToString("MM") )
+#set ($year = $post.PostDate.ToString("yy") )
+<div class="post">
+    <div class="date">
+        <span class="day">$day</span><span class="month">$month</span>
+        <hr />
+        <span class="year">$year</span>
+    </div>
+    <h1>$post.Title</h1>
+    <sup>geschrieben von <a href="mailto:$post.PostedBy.Email.Replace('@', '[at]')">$post.PostedBy.PersonalInformation.Firstname $post.PostedBy.PersonalInformation.Lastname</a></sup>
+    $HtmlStringHelper.WrapInParagraph( ${post.Text} )
+    
+    <div id="Comments">
+    <h3>Kommentare</h3><!-- TODO: Fix this graphic -->
+        #foreach($comment in $post.Comments)
+        #each
+        <div>
+            <h5>$DateFormatHelper.FriendlyFormatFromNow($comment.Time) <span>$comment.Name</span> schrieb</h5>
+            <p>$comment.Text</p>
+        </div>
+        #nodata
+        Es wurden noch keine Kommentare zu diesem Post abgegeben.
+        #end               
+    </div>
+</div>
+
+<form method="post" action="$UrlHelper.For("%{action='Detail', querystring='id=$post.Id'}")">
+<fieldset>
+    <legend>Beitrag kommentieren</legend>
+    <img src="/Content/images/email_edit.png" alt="Email icon" /><h3>Beitrag kommentieren</h3>
+    <ol>
+        <li>
+        $FormHelper.LabelFor("Comment.Name", "Name")
+        $FormHelper.TextField("Comment.Name")
+        </li>
+        <li>
+        $FormHelper.LabelFor("Comment.Text", "Kommentar")
+        $FormHelper.TextArea("Comment.Text")
+        </li>
+    </ol>
+    <input type="submit" value="Absenden" />
+</fieldset>
+</form>

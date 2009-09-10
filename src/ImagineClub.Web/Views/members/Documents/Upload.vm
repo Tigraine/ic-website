@@ -1,0 +1,23 @@
+<h1>Neues Dokument hochladen</h1>
+
+<form method="post" action="/members/Documents/Upload.aspx" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Dokument hochladen</legend>
+        <img src="/content/images/key.png" alt="Key icon" /><h3>Dokument hochladen</h3>
+        <ol>
+            <li>
+                $FormHelper.LabelFor("Document.Name", "Name")
+                $FormHelper.TextField("Document.Name")
+            </li>
+            <li>
+                $FormHelper.LabelFor("Document.Description", "Beschreibung")
+                $FormHelper.TextArea("Document.Description")
+            </li>
+            <li>
+                $FormHelper.LabelFor("uploadedFile", "Datei")
+                <input type="file" name="uploadedFile" id="uploadedFile" />
+            </li>
+        </ol>
+        <input type="submit" value="Absenden" />
+    </fieldset>
+</form>

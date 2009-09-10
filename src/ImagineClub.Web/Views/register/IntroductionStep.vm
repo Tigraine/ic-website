@@ -1,0 +1,20 @@
+<h1>Dem imagineClub beitreten</h1>
+
+<form method="post" action="IntroductionStep-next.aspx">
+<fieldset>
+    <img src="/Content/images/group_add.png" alt="" /><h3>Deine Informationen</h3>
+    <legend>Deine Informationen</legend>
+    <ol>
+        <li>$FormHelper.LabelFor("Register.Name", "Benutzername")
+        $FormHelper.TextField("Register.Name")</li>
+        <li>$FormHelper.LabelFor("Register.Password", "Kennwort")
+        $FormHelper.PasswordField("Register.Password")</li>
+        <li>$FormHelper.LabelFor("Register.Confirmation", "Wiederholung")
+        $FormHelper.PasswordField("Register.Confirmation")</li>
+        <li>$FormHelper.LabelFor("Register.Email", "Email")
+        $FormHelper.TextField("Register.Email")</li>
+    </ol>
+    $WizardHelper.LinkToNext("test")
+    <input type="submit" value="absenden" />
+</fieldset>
+</form>

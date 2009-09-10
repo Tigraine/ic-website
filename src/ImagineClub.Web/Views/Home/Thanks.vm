@@ -1,0 +1,7 @@
+Danke für dein Kommentar!
+
+<script type="text/javascript">
+    window.setTimeout(function() {
+        window.location = "$UrlHelper.For("%{action = 'Detail', querystring='Id=$id'}")";
+    }, 2000);
+</script>

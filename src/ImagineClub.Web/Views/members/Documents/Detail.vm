@@ -1,0 +1,20 @@
+#set ($day = $document.UploadedOn.ToString("dd") )
+#set ($month = $document.UploadedOn.ToString("MM") )
+#set ($year = $document.UploadedOn.ToString("yy") )
+<div class="date">
+    <span class="day">$day</span><span class="month">$month</span>
+    <hr />
+    <span class="year">$year</span>
+</div>
+<h1>$document.Name</h1>
+
+<sup>hochgeladen von <a href="mailto:$document.Uploader.Email.Replace('@', '[at]')">$document.Uploader.Firstname $document.Uploader.Lastname</a></sup>
+$HtmlStringHelper.WrapInParagraph( ${document.Description} )
+
+<div id="filedownload">
+    <img src="/Content/images/download.png" alt="Download symbol" id="download-symbol" />
+    <h3>Datei herunterladen</h3>
+    <a href="$UrlHelper.For("%{controller = 'Documents', action = 'Get', area = 'members', querystring='id=$document.id'}")"><button>$document.FileName</button></a>
+    
+    <span>Bisher heruntergeladen: $document.NumberOfDownloads</span>
+</div>

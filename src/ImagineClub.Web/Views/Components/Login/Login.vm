@@ -1,0 +1,16 @@
+<div id="login">
+    <form method="post" action="$UrlHelper.For("%{action='AuthenticateUser', controller='Profile', area = 'members'}")">
+        <fieldset>
+            <legend>Member Login</legend>
+            <img src="/content/images/key.png" alt="Key icon" /><h3>Login</h3>
+            <ol>
+                <li><label for="username" class="hidden">Username</label><input type="text" id="username" value="username" name="username" /></li>
+                <li><label for="password-plain" class="hidden">Password-Plain</label><input type="text" id="password-plain" value="password" />
+                <label for="password" class="hidden">Password</label><input type="password" id="password" name="password" /></li>
+                <li><input type="submit" value="Login" /></li>
+                <li><a href="#">Passwort vergessen?</a></li>
+                <li><a href="#">Mitglied werden?</a></li>
+            </ol>
+        </fieldset>
+    </form>
+</div>

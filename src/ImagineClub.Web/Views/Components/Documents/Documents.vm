@@ -1,0 +1,8 @@
+<div id="quickdownloads">
+    <img src="/Content/images/folder_table.png" alt="Downloads Icon" /><h3>Downloads</h3>
+    <ol>
+        #foreach($doc in $documents)
+        <li><a href="$UrlHelper.For("%{controller = 'Documents', action = 'Detail', area = 'members', querystring = 'id=$doc.Id'}")"><img src="$FileHelper.GetIconForFile( $doc.FileName )" alt="FileType icon" />$doc.Name</a><span>$FileHelper.GetFileEnding( $doc.FileName ) / $FileHelper.FuzzyFileSize( $doc.FileSize )</span></li>
+        #end
+    </ol>
+</div>

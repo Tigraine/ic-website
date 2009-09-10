@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+#macro(markAsActive $name)
+#if ($controller.ToString().EndsWith($name))
+class="active"
+#end
+#end
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+        <link rel="Stylesheet" href="/Content/css/site.css" media="screen" />
+        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/XmlRpc/manifest.aspx" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>iC - imagineClub - Students for Students</title>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="$UrlHelper.For("%{controller = 'Home', action = 'Index', area = ''}")"><img src="/Content/images/logo.png" alt="imagineClub Logo" /></a>
+                <ol id="navigation">
+#set($name = "HomeController")
+                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Index', area = ''}")">News</a></li>
+#set($name = "HomeController")
+                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'About', area = ''}")">About</a></li>
+#set($name = "HomeController")
+                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Services', area = ''}")">Services</a></li>
+#set($name = "HomeController")
+                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Partner', area = ''}")">Partner</a></li>
+#set($name = "ContactController")
+                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Contact', action = 'Index', area = ''}")">Kontakt</a></li>
+                </ol>
+            </div>
+            <div id="body-wrap">
+                #if ($Flash.get_Item("error"))
+                <div class="error">$Flash.get_Item("error")</div>
+                #end
+                <div id="sidebar">
+                    #component(Login)
+                    #component(Documents)
+                </div>
+                <div id="content">
+                    $childContent
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">         
+            <h6>imagineClub</h6> 
+            <p class="imprint">imagineClub<br />
+            ZVR: 990257259<br />
+            Lakesidepark B07b, 9020,<br />
+            <a href="mailto:vorstand@imagineclub.at">vorstand@imagineclub.at</a>
+            <a href="$UrlHelper.For("%{controller = 'Home', action = 'Impressum', area = ''}")">Impressum</a>
+            </p>
+            
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            
+        </div>
+    </body>
+</html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="/Content/script/script.js"></script>

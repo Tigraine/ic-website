@@ -1,0 +1,13 @@
+<table>
+#foreach ($document in $documents)
+#nodata 
+<p>Keine Dokumente</p>
+#each
+<tr>
+    <td>$document.Name</td>
+    <td>$DateFormatHelper.ToShortDate( $document.UploadedOn )</td>
+    <td>$document.Uploader.Username</td>
+    <td>$document.Description</td>
+</tr>
+#end
+</table>
