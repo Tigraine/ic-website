@@ -1,7 +1,8 @@
-*/bin/*
-*/obj/*
+/src/**/bin/*
+/src/**/obj/**
 build/*
-_ReSharper.LessCss.Net/*
+/src/**/App_Data/*
+_ReSharper.*/**
 *.resharper.user
 *.csproj.user
 *.suo
