@@ -2,7 +2,9 @@
 <p>Wir sind sehr an Ihrem Feedback interessiert. Sie können mit dem folgenden Formular ein Email an <a href="mailto:vorstand@imagineclub.at">vorstand@imagineclub.at</a> senden</p>
 
 #if ($error)
-    <p>ERROR!</p>
+    #foreach($err in $error.ErrorMessages)
+        $err<br />
+    #end
 #end
 
 <form method="post" action="$UrlHelper.For("%{action='Index'}")">
