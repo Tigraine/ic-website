@@ -440,6 +440,12 @@ fieldset input, fieldset textarea
     width: 244px;
 }
 
+fieldset select
+{
+    width: 260px;
+    height: 27px;
+}
+
 input, textarea
 {
     border: 1px solid #595959;
