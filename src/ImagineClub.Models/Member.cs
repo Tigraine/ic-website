@@ -1,6 +1,5 @@
 namespace ImagineClub.Web.Models
 {
-    using System;
     using System.Security.Principal;
     using Castle.ActiveRecord;
     using Castle.Components.Validator;
@@ -19,17 +18,11 @@ namespace ImagineClub.Web.Models
         [Property(NotNull = true)]
         public string Email { get; set; }
 
-        
-
         [Property(NotNull = true)]
         public string Password { get; set; }
 
         [Nested]
         public Address Address { get; set; }
-
-        
-        
-        
 
         [Nested]
         public PersonalInformation PersonalInformation { get; set; }
@@ -80,69 +73,5 @@ namespace ImagineClub.Web.Models
         {
             return (Username != null ? Username.GetHashCode() : 0);
         }
-    }
-
-        
-    public class Address
-    {
-        [Property(NotNull = true)]
-        public string Street { get; set; }
-        [Property(NotNull = true)]
-        public string ZipCode { get; set; }
-        [Property(NotNull = true)]
-        public string City { get; set; }
-    }
-
-    public class PersonalInformation
-    {
-        [ValidateNonEmpty]
-        [Property(NotNull = true)]
-        public string Firstname { get; set; }
-
-        [ValidateNonEmpty]
-        [Property(NotNull = true)]
-        public string Lastname { get; set; }
-
-        [Property]
-        public string BirthPlace { get; set; }
-        
-        [Property(NotNull = true)]
-        public string Nationality { get; set; }
-        
-        [Property]
-        public string MatrNr { get; set; }
-
-        [ValidateDateTime]
-        [Property]
-        public DateTime? BirthDay { get; set; }
-
-        [Property(NotNull = true)]
-        public string Salutation { get; set; }
-        [Property]
-        public string Title { get; set; }
-
-        [Field]
-        private string category;
-        public Category Category
-        {
-            get { return Category.GetCategoryByName(category); }
-            set { category = value.Name; }
-        }
-    }
-
-    public class ContactOptions
-    {
-        [Property]
-        public string MSN { get; set; }
-        [Property]
-        public string ICQ { get; set; }
-        [Property]
-        public string Skype { get; set; }
-
-        [Property]
-        public string Telephone { get; set; }
-
-        [Property(NotNull = true)]
-        public bool NewsLetterOptIn { get; set; }
     }
 }

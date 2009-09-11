@@ -77,13 +77,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="Administrator.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Commands\AddComment.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="ContactOptions.cs" />
     <Compile Include="ContactRequest.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="INewsPostFactory.cs" />
+    <Compile Include="PersonalInformation.cs" />
     <Compile Include="Services\ISecurityService.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="NewsPost.cs" />
