@@ -1,10 +1,13 @@
+TODO: Style Table (need input from Designer)
 <table>
 #foreach ($document in $documents)
 #nodata 
 <p>Keine Dokumente</p>
 #each
 <tr>
-    <td>$document.Name</td>
+    <td>
+      <a href="$UrlHelper.For("%{controller = 'Documents', action = 'Detail', area = 'members', querystring='id=$document.id'}")">$document.Name</a>
+    </td>
     <td>$DateFormatHelper.ToShortDate( $document.UploadedOn )</td>
     <td>$document.Uploader.Username</td>
     <td>$document.Description</td>
