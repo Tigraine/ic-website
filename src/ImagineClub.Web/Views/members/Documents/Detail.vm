@@ -8,7 +8,7 @@
 </div>
 <h1>$document.Name</h1>
 
-<sup>hochgeladen von <a href="mailto:$document.Uploader.Email.Replace('@', '[at]')">$document.Uploader.Firstname $document.Uploader.Lastname</a></sup>
+<sup>hochgeladen von <a href="mailto:$document.Uploader.Email.Replace('@', '[at]')">$document.Uploader.PersonalInformation.Firstname $document.Uploader.PersonalInformation.Lastname</a></sup>
 $HtmlStringHelper.WrapInParagraph( ${document.Description} )
 
 <div id="filedownload">
