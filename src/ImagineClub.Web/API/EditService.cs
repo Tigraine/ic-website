@@ -1,4 +1,4 @@
-﻿// Original code taken from KenEgozi.com under the MIT license - Adapted by Daniel Hölbling for imagineClub
+﻿// Original code taken from KenEgozi.com under the MIT license - Adapted by Daniel Hölbling (http://www.tigraine.at)
 // This project is licensed under the MIT License
 //
 //Copyright (c) 2007, Ken Egozi
