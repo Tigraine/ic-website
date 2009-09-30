@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns="http://www.tigraine.at/windsor-configuration.xsd">
+  <components>
+    <component
+      id="AuthenticationService"
+      service="ElmsConnector.IAuthenticatonService, ElmsConnector"
+      type="ImagineClub.Web.AuthenticationService, ImagineClubWeb" />
+
+    <component
+      id="ElmsSessionRequestService">
+      <parameters>
+        <cgiConnector>https://msdn40.e-academy.com/imgc_info/index.cfm?loc=login/cab_cgi</cgiConnector>
+        <Department>imagineClub</Department>
+      </parameters>
+    </component>
+    <!--
+    To use LDAP uncomment this block and set the appropriate values to ldapPath and domain.
+    Also don't forget to change the AuthenticationService type tp
+    type="ElmsConnector.LdapAuthenticationService, ElmsConnector"
+    <component id="LdapAuthenticationService">
+      <parameters>
+        <ldapPath></ldapPath>
+        <domain></domain>
+      </parameters>
+    </component>-->
+    
+  </components>
+</configuration>

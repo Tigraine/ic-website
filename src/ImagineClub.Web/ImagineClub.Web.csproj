@@ -106,6 +106,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\elmah\Elmah.dll</HintPath>
     </Reference>
+    <Reference Include="ElmsConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\elmsConnector\ElmsConnector.dll</HintPath>
+    </Reference>
     <Reference Include="HibernatingRhinos.NHibernate.Profiler.Appender, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0774796e73ebf640, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\HibernatingRhinos.NHibernate.Profiler.Appender.dll</HintPath>
@@ -225,13 +229,16 @@
     <Content Include="Content\images\login-dummy.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\script\script.js" />
+    <Content Include="elms.xml" />
     <Content Include="Global.asax" />
+    <Content Include="Login.htm" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\BloggerAPI.cs" />
     <Compile Include="API\EditService.cs" />
     <Compile Include="API\MetaWeblogAPI.cs" />
+    <Compile Include="AuthenticationService.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />

@@ -1,7 +1,7 @@
 <div id="services">
     <img src="/Content/images/folder_table.png" alt="Downloads Icon" /><h3>Meine Services</h3>
     <ol>
-        <li><a href="#"><img src="/Content/images/basket.png" alt="" />MSDN AA</a>
+        <li><a href="http://msdn40.e-academy.com/elms/Security/Login.aspx?campus=imgc_info"><img src="/Content/images/basket.png" alt="" />MSDN AA</a>
             <span>Microsoft Software herunterladen</span>
         </li>
         <li><a href="$UrlHelper.For("%{controller = 'Documents', action = 'List', area = 'members'}")"><img src="/Content/images/book_open.png" alt="" />Dokumente</a>

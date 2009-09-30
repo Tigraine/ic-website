@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+        <link rel="Stylesheet" href="/Content/css/site.css" media="screen" />
+        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/XmlRpc/manifest.aspx" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>iC - imagineClub - Students for Students</title>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="$UrlHelper.For("%{controller = 'Home', action = 'Index', area = ''}")"><img src="/Content/images/logo.png" alt="imagineClub Logo" /></a>
+            </div>
+            <div id="body-wrap">
+                <div class="error">$ERROR$</div>
+                <div id="content">                      
+                    <form method="post" action="VerifyUser.elms">
+                        <fieldset>
+                            <h3>Elms-Login</h3>
+                            <ol>
+                                <li><input type="text" name="Username" /></li>
+                                <li><input type="password" name="Password" /></li>
+                                <li><input type="submit" /></li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">         
+            <h6>imagineClub</h6> 
+            <p class="imprint">imagineClub<br />
+            ZVR: 990257259<br />
+            Lakesidepark B07b, 9020,<br />
+            <a href="mailto:vorstand@imagineclub.at">vorstand@imagineclub.at</a>
+            <a href="$UrlHelper.For("%{controller = 'Home', action = 'Impressum', area = ''}")">Impressum</a>
+            </p>
+            
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            
+        </div>
+    </body>
+</html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="/Content/script/script.js"></script>
