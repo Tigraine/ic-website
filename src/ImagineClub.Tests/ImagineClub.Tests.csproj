@@ -108,6 +108,7 @@
     <Compile Include="Controllers\LoginBehavior.cs" />
     <Compile Include="Controllers\MemberTestCase.cs" />
     <Compile Include="Controllers\NewsPost_FindRecent.cs" />
+    <Compile Include="Services\HashEncryptionTest.cs" />
     <Compile Include="Services\SecurityServiceFixture.cs" />
     <Compile Include="TestExtensions.cs" />
     <Compile Include="DatabaseDependantControllerTest.cs" />

@@ -87,6 +87,8 @@
     <Compile Include="Document.cs" />
     <Compile Include="INewsPostFactory.cs" />
     <Compile Include="PersonalInformation.cs" />
+    <Compile Include="Services\SHA1HashAlgorithm.cs" />
+    <Compile Include="Services\IHashAlgorithm.cs" />
     <Compile Include="Services\ISecurityService.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="NewsPost.cs" />

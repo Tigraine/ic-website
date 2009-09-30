@@ -4,10 +4,11 @@ namespace ImagineClub.Web.Models
     using Castle.ActiveRecord;
     using Castle.Components.Validator;
     using NHibernate.Criterion;
+    using Services;
 
     [ActiveRecord("Members", DiscriminatorColumn = "type", DiscriminatorType = "String", DiscriminatorValue = "member")]
     public class Member : ValidatedActiveRecordEntity<Member>, IPrincipal
-    {     
+    {
         [ValidateIsUnique]
         [ValidateLength(6,int.MaxValue)]
         [Property(NotNull = true)]
@@ -47,9 +48,11 @@ namespace ImagineClub.Web.Models
 
         public static Member FindMemberByLogin(string username, string password)
         {
+            var encryption = new SHA1HashAlgorithm();
+            string hash = encryption.Hash(password);
             var criteria = DetachedCriteria.For(typeof(Member))
                 .Add(Restrictions.Eq("Username", username).IgnoreCase())
-                .Add(Restrictions.Eq("Password", password));
+                .Add(Restrictions.Eq("Password", hash));
 
             return Member.FindFirst(criteria);
         }
