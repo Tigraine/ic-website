@@ -46,10 +46,15 @@ namespace ImagineClub.Web.Models
             }
         }
 
-        public static Member FindMemberByLogin(string username, string password)
+        public static string HashPassword(string password)
         {
             var encryption = new SHA1HashAlgorithm();
-            string hash = encryption.Hash(password);
+            return encryption.Hash(password);
+        }
+
+        public static Member FindMemberByLogin(string username, string password)
+        {
+            var hash = HashPassword(password);
             var criteria = DetachedCriteria.For(typeof(Member))
                 .Add(Restrictions.Eq("Username", username).IgnoreCase())
                 .Add(Restrictions.Eq("Password", hash));

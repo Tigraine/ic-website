@@ -27,8 +27,6 @@ namespace ImagineClub.Web.Models
         [Property]
         public DateTime? BirthDay { get; set; }
 
-        [Property(NotNull = true)]
-        public string Salutation { get; set; }
         [Property]
         public string Title { get; set; }
 
