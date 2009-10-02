@@ -1,6 +1,6 @@
 <h1>Dem imagineClub beitreten</h1>
 
-<form method="post" action="Personal.aspx">
+<form method="post" action="PersonalInformation.aspx">
 <fieldset>
     <img src="/Content/images/group_add.png" alt="" /><h3>Persönliche Informationen</h3>
     <legend>Persönliche Informationen</legend>
@@ -14,12 +14,12 @@
         $FormHelper.TextField("Personal.Firstname")</li>
         <li>$FormHelper.LabelFor("Personal.Lastname", "Nachname")
         $FormHelper.TextField("Personal.Lastname")</li>
-        <li>$FormHelper.LabelFor("Address.Street", "Strasse")
-        $FormHelper.TextField("Address.Street")</li>
-        <li>$FormHelper.LabelFor("Address.Zip", "PLZ")
-        $FormHelper.TextField("Address.Zip")</li>
-        <li>$FormHelper.LabelFor("Address.City", "Stadt")
-        $FormHelper.TextField("Address.City")</li>
+        <li>$FormHelper.LabelFor("Personal.Street", "Strasse")
+        $FormHelper.TextField("Personal.Street")</li>
+        <li>$FormHelper.LabelFor("Personal.Zip", "PLZ")
+        $FormHelper.TextField("Personal.Zip")</li>
+        <li>$FormHelper.LabelFor("Personal.City", "Stadt")
+        $FormHelper.TextField("Personal.City")</li>
         <li>$FormHelper.LabelFor("Personal.MatrNr", "MatrikelNr")
         $FormHelper.TextField("Personal.MatrNr")</li>
         <li>$FormHelper.LabelFor("Personal.BirthPlace", "Geburtsort")

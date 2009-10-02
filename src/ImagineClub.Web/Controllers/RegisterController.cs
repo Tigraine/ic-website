@@ -89,6 +89,7 @@ namespace ImagineClub.Web.Controllers
     {
         [ValidateNonEmpty]
         [UsernameUniqueValidator]
+        [ValidateLength(6, int.MaxValue)]
         public string Username { get; set; }
 
         [ValidateNonEmpty]

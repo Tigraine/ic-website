@@ -25,7 +25,6 @@ namespace ImagineClub.Tests
                                                                       Firstname = "Daniel",
                                                                       Lastname = "Hölbling",
                                                                       Nationality = "AT",
-                                                                      Salutation = "Herr",
                                                                       BirthDay = new DateTime(1985, 7, 24),
                                                                       Category = Category.Student
                                                                   },

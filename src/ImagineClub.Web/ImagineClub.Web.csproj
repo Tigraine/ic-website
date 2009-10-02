@@ -283,6 +283,7 @@
     <None Include="Views\mail\contact.vm" />
     <None Include="Views\register\PersonalInformation.vm" />
     <None Include="Views\register\AccountInformation.vm" />
+    <None Include="Views\register\Thanks.vm" />
     <None Include="Views\rescues\generalerror.vm" />
     <None Include="Views\XmlRpc\Manifest.vm" />
     <None Include="Views\XmlRpc\WebLayout.vm" />
