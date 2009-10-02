@@ -10,7 +10,7 @@ namespace ImagineClub.Web.Helpers
             if (summary == null) return string.Empty;
 
             StringBuilder builder = new StringBuilder();
-            builder.Append("<ul>");
+            builder.Append("<ul class=\"validationerror\">");
             foreach(var x in summary.GetErrorsForProperty(property))
             {
                 builder.AppendFormat("<li>{0}</li>", x);
