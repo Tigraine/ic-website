@@ -2,6 +2,7 @@ namespace ImagineClub.Web.Controllers
 {
     using Castle.Components.Validator;
     using Castle.MonoRail.Framework;
+    using Models;
     using Validators;
 
     [Layout("default"), Rescue(typeof (RescueController))]
@@ -18,11 +19,17 @@ namespace ImagineClub.Web.Controllers
             if (runner.IsValid(viewModel))
             {
                 Session["AccountInfo"] = viewModel;
+                RedirectToAction("PersonalInformation");
             }
             else
             {
                 PropertyBag["Register"] = viewModel;
             }
+        }
+
+        public void PersonalInformation()
+        {
+            PropertyBag["categories"] = Category.All;
         }
     }
 

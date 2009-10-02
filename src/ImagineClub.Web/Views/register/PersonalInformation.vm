@@ -1,0 +1,32 @@
+<h1>Dem imagineClub beitreten</h1>
+
+<form method="post" action="Personal.aspx">
+<fieldset>
+    <img src="/Content/images/group_add.png" alt="" /><h3>Persönliche Informationen</h3>
+    <legend>Persönliche Informationen</legend>
+    <ol>
+        <li>$FormHelper.LabelFor("Personal.Category", "Kategorie") 
+        $FormHelper.Select("Personal.Category", $categories, "%{value='Name', text='Name'}")</li>
+        
+        <li>$FormHelper.LabelFor("Personal.Title", "Titel")
+        $FormHelper.TextField("Personal.Title")</li>
+        <li>$FormHelper.LabelFor("Personal.Firstname", "Vorname")
+        $FormHelper.TextField("Personal.Firstname")</li>
+        <li>$FormHelper.LabelFor("Personal.Lastname", "Nachname")
+        $FormHelper.TextField("Personal.Lastname")</li>
+        <li>$FormHelper.LabelFor("Address.Street", "Strasse")
+        $FormHelper.TextField("Address.Street")</li>
+        <li>$FormHelper.LabelFor("Address.Zip", "PLZ")
+        $FormHelper.TextField("Address.Zip")</li>
+        <li>$FormHelper.LabelFor("Address.City", "Stadt")
+        $FormHelper.TextField("Address.City")</li>
+        <li>$FormHelper.LabelFor("Personal.MatrNr", "MatrikelNr")
+        $FormHelper.TextField("Personal.MatrNr")</li>
+        <li>$FormHelper.LabelFor("Personal.BirthPlace", "Geburtsort")
+        $FormHelper.TextField("Personal.BirthPlace")</li>
+        <li>$FormHelper.LabelFor("Personal.Birthday", "Geburtstag")
+        $FormHelper.TextField("Personal.Birthday")</li>
+    </ol>
+    <input type="submit" value="absenden" />
+</fieldset>
+</form>

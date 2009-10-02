@@ -249,6 +249,8 @@
     <Compile Include="Controllers\members\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RescueController.cs" />
+    <Compile Include="Validators\UsernameUniqueValidator.cs" />
+    <Compile Include="Validators\UsernameUniqueValidatorAttribute.cs" />
     <Compile Include="Controllers\XmlRpc.cs" />
     <Compile Include="DefaultValueAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -279,7 +281,7 @@
     <None Include="Views\Home\Thanks.vm" />
     <None Include="Views\layouts\default.vm" />
     <None Include="Views\mail\contact.vm" />
-    <None Include="Views\register\DetailStep.vm" />
+    <None Include="Views\register\PersonalInformation.vm" />
     <None Include="Views\register\AccountInformation.vm" />
     <None Include="Views\rescues\generalerror.vm" />
     <None Include="Views\XmlRpc\Manifest.vm" />
