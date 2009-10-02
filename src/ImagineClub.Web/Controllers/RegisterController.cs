@@ -32,6 +32,19 @@ namespace ImagineClub.Web.Controllers
         {
             PropertyBag["categories"] = Category.All;
         }
+
+        public void PersonalInformation([DataBind("Personal")]PersonalInformationViewModel viewModel)
+        {
+            var runner = new ValidatorRunner(new CachedValidationRegistry());
+            if (runner.IsValid(viewModel))
+            {
+                Session["PersonalInfo"] = viewModel;
+            }
+            else
+            {
+                PropertyBag["Personal"] = viewModel;
+            }
+        }
     }
 
     public class AccountInformationViewModel
