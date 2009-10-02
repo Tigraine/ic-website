@@ -99,7 +99,7 @@ namespace ImagineClub.Web.Controllers
         public string Password { get; set; }
 
         [ValidateNonEmpty("Erforderliches Feld - muss ausgefüllt werden.")]
-        [ValidateSameAs("Password")]
+        [ValidateSameAs("Password", "Stimmt nicht mit Kennwort überein")]
         public string PasswordConfirmation { get; set; }
 
         [ValidateNonEmpty("Erforderliches Feld - muss ausgefüllt werden.")]

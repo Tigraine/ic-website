@@ -18,19 +18,6 @@
         $FormHelper.TextField("Register.Email")
         $ValidationHelper.GetErrorMessages($summary, "Email")</li>
     </ol>
-    
-    
-    <h1>#foreach($x in $summary.GetErrorsForProperty("Username"))
-        $x
-    #end</h1>
-    
-    #if($Flash.summary)
-    <br />
-       #foreach($errormessage in $summary.ErrorMessages)
-           $errormessage<br />
-       #end
-    <br />
-    #end
     <input type="submit" value="absenden" />
 </fieldset>
 </form>
