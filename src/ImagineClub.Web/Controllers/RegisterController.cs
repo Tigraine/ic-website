@@ -32,11 +32,12 @@ namespace ImagineClub.Web.Controllers
 
         public void PersonalInformation()
         {
-            PropertyBag["categories"] = Category.All;
+            Flash["categories"] = Category.All;
         }
 
         public void PersonalInformation([DataBind("Personal")] PersonalInformationViewModel viewModel)
         {
+            Flash["categories"] = Category.All;
             var runner = new ValidatorRunner(new CachedValidationRegistry());
             if (runner.IsValid(viewModel))
             {
@@ -45,7 +46,8 @@ namespace ImagineClub.Web.Controllers
             }
             else
             {
-                PropertyBag["Personal"] = viewModel;
+                Flash["Personal"] = viewModel;
+                Flash["summary"] = runner.GetErrorSummary(viewModel);
             }
         }
 

@@ -9,23 +9,32 @@
         $FormHelper.Select("Personal.Category", $categories, "%{value='Name', text='Name'}")</li>
         
         <li>$FormHelper.LabelFor("Personal.Title", "Titel")
-        $FormHelper.TextField("Personal.Title")</li>
+        $FormHelper.TextField("Personal.Title")
+        $ValidationHelper.GetErrorMessages($summary, "Title")</li>
         <li>$FormHelper.LabelFor("Personal.Firstname", "Vorname")
-        $FormHelper.TextField("Personal.Firstname")</li>
+        $FormHelper.TextField("Personal.Firstname")
+        $ValidationHelper.GetErrorMessages($summary, "Firstname")</li>
         <li>$FormHelper.LabelFor("Personal.Lastname", "Nachname")
-        $FormHelper.TextField("Personal.Lastname")</li>
+        $FormHelper.TextField("Personal.Lastname")
+        $ValidationHelper.GetErrorMessages($summary, "Lastname")</li>
         <li>$FormHelper.LabelFor("Personal.Street", "Strasse")
-        $FormHelper.TextField("Personal.Street")</li>
+        $FormHelper.TextField("Personal.Street")
+        $ValidationHelper.GetErrorMessages($summary, "Street")</li>
         <li>$FormHelper.LabelFor("Personal.Zip", "PLZ")
-        $FormHelper.TextField("Personal.Zip")</li>
+        $FormHelper.TextField("Personal.Zip")
+        $ValidationHelper.GetErrorMessages($summary, "Zip")</li>
         <li>$FormHelper.LabelFor("Personal.City", "Stadt")
-        $FormHelper.TextField("Personal.City")</li>
+        $FormHelper.TextField("Personal.City")
+        $ValidationHelper.GetErrorMessages($summary, "City")</li>
         <li>$FormHelper.LabelFor("Personal.MatrNr", "MatrikelNr")
-        $FormHelper.TextField("Personal.MatrNr")</li>
+        $FormHelper.TextField("Personal.MatrNr")
+        $ValidationHelper.GetErrorMessages($summary, "MatrNr")</li>
         <li>$FormHelper.LabelFor("Personal.BirthPlace", "Geburtsort")
-        $FormHelper.TextField("Personal.BirthPlace")</li>
+        $FormHelper.TextField("Personal.BirthPlace")
+        $ValidationHelper.GetErrorMessages($summary, "BirthPlace")</li>
         <li>$FormHelper.LabelFor("Personal.Birthday", "Geburtstag")
-        $FormHelper.TextField("Personal.Birthday")</li>
+        $FormHelper.TextField("Personal.Birthday")
+        $ValidationHelper.GetErrorMessages($summary, "Birthday")</li>
     </ol>
     <input type="submit" value="absenden" />
 </fieldset>
