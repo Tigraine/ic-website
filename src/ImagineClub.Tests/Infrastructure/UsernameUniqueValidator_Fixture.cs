@@ -9,7 +9,7 @@ namespace ImagineClub.Tests.Infrastructure
         public void ReturnsFalseIfUsernameAlreadyExists()
         {
             ObjectMother.GetAdminAndSaveToDatabase();
-            var validator = new UsernameUniqueValidator();
+            var validator = new UsernameUniqueValidator(null);
             
             bool valid = validator.IsValid(null, "Tigraine");
 
@@ -19,11 +19,19 @@ namespace ImagineClub.Tests.Infrastructure
         [Fact]
         public void ReturnsTrueIfUsernameDoesNotExist()
         {
-            var validator = new UsernameUniqueValidator();
+            var validator = new UsernameUniqueValidator(null);
 
             bool valid = validator.IsValid(null, "Tigraine");
 
             Assert.Equal(true, valid);
+        }
+
+        [Fact]
+        public void ReturnsCorrectErrorMessage()
+        {
+            var validator = new UsernameUniqueValidator("bla");
+
+            Assert.Equal("bla", validator.ErrorMessage);
         }
     }
 }
