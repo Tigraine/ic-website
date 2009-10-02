@@ -1,5 +1,6 @@
 namespace ImagineClub.Web.Controllers
 {
+    using System;
     using Castle.Components.Validator;
     using Castle.MonoRail.Framework;
     using Models;
@@ -46,5 +47,29 @@ namespace ImagineClub.Web.Controllers
         [ValidateNonEmpty]
         [ValidateEmail]
         public string Email { get; set; }
+    }
+
+    public class PersonalInformationViewModel
+    {
+        [ValidateNonEmpty]
+        public string Category { get; set; }
+        public string Title  { get; set; }
+        [ValidateNonEmpty]
+        public string Firstname { get; set; }
+        [ValidateNonEmpty]
+        public string Lastname { get; set; }
+        [ValidateNonEmpty]
+        public string Street { get; set; }
+        [ValidateRegExp("[0-9]*")]
+        public string Zip { get; set; }
+        [ValidateNonEmpty]
+        public string City { get; set; }
+        [ValidateNonEmpty]
+        [ValidateRegExp("[0-9]*")]
+        public string MatrNr { get; set; }
+        [ValidateNonEmpty]
+        public string BirthPlace { get; set; }
+        [ValidateDateTime]
+        public DateTime Birthday { get; set; }
     }
 }
