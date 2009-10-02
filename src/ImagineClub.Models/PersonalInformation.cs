@@ -27,24 +27,17 @@ namespace ImagineClub.Web.Models
         [Property]
         public DateTime? BirthDay { get; set; }
 
-        [Field(NotNull = true)]
-        private string _salutation;
-
-        public Salutation Salutation
-        {
-            get { return Salutation.GetByName(_salutation); }
-            set { _salutation = value.Name; }
-        }
-
+        [Property(NotNull = true)]
+        public string Salutation { get; set; }
         [Property]
         public string Title { get; set; }
 
         [Field]
-        private string _category;
+        private string category;
         public Category Category
         {
-            get { return Category.GetCategoryByName(_category); }
-            set { _category = value.Name; }
+            get { return Category.GetCategoryByName(category); }
+            set { category = value.Name; }
         }
     }
 }
