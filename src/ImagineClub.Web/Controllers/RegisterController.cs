@@ -1,66 +1,43 @@
 namespace ImagineClub.Web.Controllers
 {
-    using System;
+    using Castle.Components.Validator;
     using Castle.MonoRail.Framework;
-    using Helpers;
-    using Models;
+    using Validators;
 
-    [DynamicActionProvider(typeof (WizardActionProvider))]
     [Layout("default"), Rescue(typeof (RescueController))]
-    public class RegisterController : ControllerBase, IWizardController
+    public class RegisterController : ControllerBase
     {
-        public void OnWizardStart()
+        public void AccountInformation()
         {
+            
         }
 
-        public bool OnBeforeStep(string wizardName, string stepName, IWizardStepPage step)
+        public void AccountInformation([DataBind("Register")]AccountInformationViewModel viewModel)
         {
-            return true;
-        }
-
-        public void OnAfterStep(string wizardName, string stepName, IWizardStepPage step)
-        {
-        }
-
-        public IWizardStepPage[] GetSteps(IEngineContext context)
-        {
-            return new IWizardStepPage[]
-                       {
-                           new IntroductionStep(),
-                           new DetailStep()
-                       };
-        }
-
-        public bool UseCurrentRouteForRedirects
-        {
-            get { return true; }
-        }
-    }
-
-    [Helper(typeof(HtmlStringHelper)), Helper(typeof(FileHelper))]
-    public class IntroductionStep : WizardStepPage
-    {
-        public void Next()
-        {
-            try
+            ValidatorRunner runner = new ValidatorRunner(new CachedValidationRegistry());
+            if (runner.IsValid(viewModel))
             {
-                DoNavigate();
+                Session["AccountInfo"] = viewModel;
             }
-            catch(Exception ex)
+            else
             {
-                Flash["error"] = ex;
-                RedirectToAction(ActionName);
+                PropertyBag["Register"] = viewModel;
             }
         }
     }
 
-    [Helper(typeof(HtmlStringHelper)), Helper(typeof(FileHelper))]
-    public class DetailStep : WizardStepPage
+    public class AccountInformationViewModel
     {
-        protected override void RenderWizardView()
-        {
-            PropertyBag["categories"] = Category.All;
-            base.RenderWizardView();
-        }
+        [ValidateNonEmpty]
+        [UsernameUniqueValidator]
+        public string Username { get; set; }
+        [ValidateNonEmpty]
+        public string Password { get; set; }
+        [ValidateNonEmpty]
+        [ValidateSameAs("Password")]
+        public string PasswordConfirmation { get; set; }
+        [ValidateNonEmpty]
+        [ValidateEmail]
+        public string Email { get; set; }
     }
 }

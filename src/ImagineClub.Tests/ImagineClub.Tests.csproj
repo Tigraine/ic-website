@@ -43,6 +43,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\castle\Castle.Components.Pagination.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Components.Validator, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ImagineClub.Web\bin\Castle.Components.Validator.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\castle\Castle.Core.dll</HintPath>
@@ -108,6 +112,7 @@
     <Compile Include="Controllers\LoginBehavior.cs" />
     <Compile Include="Controllers\MemberTestCase.cs" />
     <Compile Include="Controllers\NewsPost_FindRecent.cs" />
+    <Compile Include="Infrastructure\UsernameUniqueValidator_Fixture.cs" />
     <Compile Include="Services\HashEncryptionTest.cs" />
     <Compile Include="Services\SecurityServiceFixture.cs" />
     <Compile Include="TestExtensions.cs" />

@@ -280,7 +280,7 @@
     <None Include="Views\layouts\default.vm" />
     <None Include="Views\mail\contact.vm" />
     <None Include="Views\register\DetailStep.vm" />
-    <None Include="Views\register\IntroductionStep.vm" />
+    <None Include="Views\register\AccountInformation.vm" />
     <None Include="Views\rescues\generalerror.vm" />
     <None Include="Views\XmlRpc\Manifest.vm" />
     <None Include="Views\XmlRpc\WebLayout.vm" />
