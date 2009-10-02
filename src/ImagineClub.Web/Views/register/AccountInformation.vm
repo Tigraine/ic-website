@@ -6,14 +6,31 @@
     <legend>Deine Anmelde-Informationen</legend>
     <ol>
         <li>$FormHelper.LabelFor("Register.Username", "Benutzername")
-        $FormHelper.TextField("Register.Username")</li>
+        $FormHelper.TextField("Register.Username")
+        $ValidationHelper.GetErrorMessages($summary, "Username")</li>
         <li>$FormHelper.LabelFor("Register.Password", "Kennwort")
-        $FormHelper.PasswordField("Register.Password")</li>
+        $FormHelper.PasswordField("Register.Password")
+        $ValidationHelper.GetErrorMessages($summary, "Password")</li>
         <li>$FormHelper.LabelFor("Register.PasswordConfirmation", "Wiederholung")
-        $FormHelper.PasswordField("Register.PasswordConfirmation")</li>
+        $FormHelper.PasswordField("Register.PasswordConfirmation")
+        $ValidationHelper.GetErrorMessages($summary, "PasswordConfirmation")</li>
         <li>$FormHelper.LabelFor("Register.Email", "Email")
-        $FormHelper.TextField("Register.Email")</li>
+        $FormHelper.TextField("Register.Email")
+        $ValidationHelper.GetErrorMessages($summary, "Email")</li>
     </ol>
+    
+    
+    <h1>#foreach($x in $summary.GetErrorsForProperty("Username"))
+        $x
+    #end</h1>
+    
+    #if($Flash.summary)
+    <br />
+       #foreach($errormessage in $summary.ErrorMessages)
+           $errormessage<br />
+       #end
+    <br />
+    #end
     <input type="submit" value="absenden" />
 </fieldset>
 </form>

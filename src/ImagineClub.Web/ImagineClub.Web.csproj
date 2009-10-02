@@ -249,6 +249,7 @@
     <Compile Include="Controllers\members\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RescueController.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Validators\UsernameUniqueValidator.cs" />
     <Compile Include="Validators\UsernameUniqueValidatorAttribute.cs" />
     <Compile Include="Controllers\XmlRpc.cs" />
