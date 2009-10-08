@@ -6,9 +6,7 @@ namespace ImagineClub.Web.Controllers
     using System.Web.Security;
     using Castle.ActiveRecord;
     using Castle.Components.Common.EmailSender;
-    using Castle.Components.Validator;
     using Models;
-    using Models.Commands;
     using Models.Services;
     using NHibernate.Criterion;
 
