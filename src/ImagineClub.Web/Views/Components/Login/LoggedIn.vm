@@ -10,6 +10,9 @@
         <li><a href="$UrlHelper.For("%{controller = 'Documents', action = 'Upload', area = 'members'}")"><img src="/Content/images/book_open.png" alt="" />Hochladen</a>
             <span>LV Unterlagen hochladen</span>
         </li>
+        <li><a href="$UrlHelper.For("%{controller = 'Account', action = 'Edit', area = 'members'}")"><img src="/Content/images/user_edit.png" alt="" />Profil</a>
+            <span>Einstellungen ändern</span>
+        </li>
         
         <li class="seperated">$UrlHelper.Link("<img src='/Content/images/door_out.png' alt='' />Logout", "%{action='logout', area='members', controller='Profile'}")</li>
     </ol>
