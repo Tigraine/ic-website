@@ -92,5 +92,25 @@ namespace ImagineClub.Web.Controllers
                                     d);
             return randomPwd.Substring(0, 6);
         }
+
+        public void EditProfile()
+        {
+            using (new SessionScope())
+            {
+                PropertyBag["member"] = Member.Find(((Member)Context.CurrentUser).Id);
+            }
+        }
+
+        public void EditPassword(string password)
+        {
+            using (new SessionScope())
+            {
+                Member member = Member.Find(((Member) Context.CurrentUser).Id);
+                member.Password = Member.HashPassword(password);
+                member.Save();
+                Flash["success"] = "Kennwort wurde erfolgreich geändert";
+                RedirectToAction("EditProfile");
+            }
+        }
     }
 }

@@ -1,0 +1,18 @@
+﻿<h1>Profil bearbeiten</h1>
+
+#if ($success)
+    <b>$success</b>
+#end
+
+<form action="EditPassword.aspx" method="post">
+    <fieldset>
+        <img src="/Content/images/email_edit.png" alt="Email icon" /><h3>Kennwort ändern</h3>
+        <legend>Kennwort ändern</legend>
+
+        <ol>
+            <li>$FormHelper.LabelFor("Password", "Password")
+            $FormHelper.TextField("Password")</li>
+        </ol>
+        <input type="submit" id="submit" value="Senden" />
+    </fieldset>
+</form>
