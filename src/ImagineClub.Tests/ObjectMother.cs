@@ -7,13 +7,14 @@ namespace ImagineClub.Tests
 
     public class ObjectMother
     {
+        public const string AdminPlaintextPassword = "random-password";
         public static Administrator GetAdministrator()
         {
             var administrator = new Administrator
                                     {
                                         Email = "tigraine@tigraine.at",
                                         Username = "Tigraine",
-                                        Password = "random-password",
+                                        Password = Member.HashPassword(AdminPlaintextPassword),
                                         Address = new Address
                                                       {
                                                           City = "Klagenfurt",
