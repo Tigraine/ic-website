@@ -242,6 +242,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\members\AccountController.cs" />
     <Compile Include="Controllers\members\AuthenticationFilter.cs" />
     <Compile Include="Controllers\members\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -283,7 +284,7 @@
     <None Include="Views\Home\Thanks.vm" />
     <None Include="Views\layouts\default.vm" />
     <None Include="Views\mail\contact.vm" />
-    <None Include="Views\members\profile\EditProfile.vm" />
+    <None Include="Views\members\Account\Edit.vm" />
     <None Include="Views\members\profile\RecoverPassword.vm" />
     <None Include="Views\members\profile\RecoveryComplete.vm" />
     <None Include="Views\register\PersonalInformation.vm" />

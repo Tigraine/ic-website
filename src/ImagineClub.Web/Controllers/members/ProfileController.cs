@@ -6,6 +6,7 @@ namespace ImagineClub.Web.Controllers
     using System.Web.Security;
     using Castle.ActiveRecord;
     using Castle.Components.Common.EmailSender;
+    using Castle.MonoRail.Framework;
     using Models;
     using Models.Services;
     using NHibernate.Criterion;
@@ -91,26 +92,6 @@ namespace ImagineClub.Web.Controllers
                 Member.HashPassword(DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString() +
                                     d);
             return randomPwd.Substring(0, 6);
-        }
-
-        public void EditProfile()
-        {
-            using (new SessionScope())
-            {
-                PropertyBag["member"] = Member.Find(((Member)Context.CurrentUser).Id);
-            }
-        }
-
-        public void EditPassword(string password)
-        {
-            using (new SessionScope())
-            {
-                Member member = Member.Find(((Member) Context.CurrentUser).Id);
-                member.Password = Member.HashPassword(password);
-                member.Save();
-                Flash["success"] = "Kennwort wurde erfolgreich geändert";
-                RedirectToAction("EditProfile");
-            }
         }
     }
 }
