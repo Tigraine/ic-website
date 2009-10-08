@@ -25,9 +25,4 @@ namespace ImagineClub.Web.Models.Commands
             comment.SaveAndFlush();
         }
     }
-
-    public interface ICommand
-    {
-        void Execute();
-    }
 }

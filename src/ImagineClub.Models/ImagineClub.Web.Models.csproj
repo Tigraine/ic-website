@@ -81,6 +81,7 @@
     <Compile Include="Administrator.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Commands\AddComment.cs" />
+    <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="ContactOptions.cs" />
     <Compile Include="ContactRequest.cs" />

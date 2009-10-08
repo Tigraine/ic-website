@@ -1,9 +1,16 @@
 namespace ImagineClub.Web.Controllers
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Web.Security;
+    using Castle.ActiveRecord;
+    using Castle.Components.Common.EmailSender;
+    using Castle.Components.Validator;
     using Models;
+    using Models.Commands;
     using Models.Services;
+    using NHibernate.Criterion;
 
 
     public class ProfileController : MemberControllerBase
@@ -41,6 +48,51 @@ namespace ImagineClub.Web.Controllers
         {
             Context.Response.RemoveCookie(FormsAuthentication.FormsCookieName);
             Redirect("", "Home", "Index");
+        }
+
+        public void RecoverPassword()
+        {
+        }
+
+        public void RecoverPassword(string email)
+        {
+            var criteria = DetachedCriteria.For(typeof (Member))
+                .Add(Restrictions.Eq("Email", email))
+                .SetMaxResults(1);
+            var member = Member.FindOne(criteria);
+            if (member == null)
+            {
+                Flash["recovery_error"] = "Die angegebene Email adresse ist uns nicht bekannt";
+                Flash["email"] = email;
+            }
+            else
+            {
+                string password = GenerateRandomPassword();
+                using (new SessionScope())
+                {
+                    member.Password = Member.HashPassword(password);
+                    member.Save();
+                }
+                var parameter = new Dictionary<string, object> { { "password", password }, {"member", member} };
+                Message message = RenderMailMessage("PasswordRecovery", null, (IDictionary)parameter);
+                message.Encoding = System.Text.Encoding.UTF8;
+                DeliverEmail(message);
+                RedirectToAction("RecoveryComplete");
+            }
+        }
+
+        public void RecoveryComplete()
+        {
+        }
+
+        private string GenerateRandomPassword()
+        {
+            var random = new Random();
+            double d = random.NextDouble();
+            string randomPwd =
+                Member.HashPassword(DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString() +
+                                    d);
+            return randomPwd.Substring(0, 6);
         }
     }
 }

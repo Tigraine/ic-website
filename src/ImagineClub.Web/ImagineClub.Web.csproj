@@ -269,6 +269,7 @@
     <None Include="Views\Home\About.vm" />
     <None Include="Views\Home\Impressum.vm" />
     <None Include="Views\Home\Partner.vm" />
+    <None Include="Views\mail\PasswordRecovery.vm" />
     <None Include="Views\members\Documents\Detail.vm" />
     <None Include="Views\members\Documents\List.vm" />
     <None Include="Views\members\Documents\Thanks.vm" />
@@ -282,6 +283,8 @@
     <None Include="Views\Home\Thanks.vm" />
     <None Include="Views\layouts\default.vm" />
     <None Include="Views\mail\contact.vm" />
+    <None Include="Views\members\profile\RecoverPassword.vm" />
+    <None Include="Views\members\profile\RecoveryComplete.vm" />
     <None Include="Views\register\PersonalInformation.vm" />
     <None Include="Views\register\AccountInformation.vm" />
     <None Include="Views\register\Thanks.vm" />

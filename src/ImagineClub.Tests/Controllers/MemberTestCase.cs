@@ -42,7 +42,7 @@ namespace ImagineClub.Tests.Controllers
         {
             var admin = CreateAdministrator();
 
-            var member = Member.FindMemberByLogin(admin.Username, admin.Password);
+            var member = Member.FindMemberByLogin(admin.Username, ObjectMother.AdminPlaintextPassword);
             Assert.Equal(admin.PersonalInformation.Category, member.PersonalInformation.Category);
         }
     }

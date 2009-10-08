@@ -12,7 +12,7 @@ namespace ImagineClub.Tests.Services
             Administrator administrator = ObjectMother.GetAdminAndSaveToDatabase();
 
             var service = new SecurityService();
-            bool authenticationResult = service.AuthenticateUser(administrator.Username, administrator.Password);
+            bool authenticationResult = service.AuthenticateUser(administrator.Username, ObjectMother.AdminPlaintextPassword);
 
             Assert.True(authenticationResult);
         }
