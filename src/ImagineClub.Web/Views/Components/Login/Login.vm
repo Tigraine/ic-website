@@ -8,8 +8,8 @@
                 <li><label for="password-plain" class="hidden">Password-Plain</label><input type="text" id="password-plain" value="password" />
                 <label for="password" class="hidden">Password</label><input type="password" id="password" name="password" /></li>
                 <li><input type="submit" value="Login" /></li>
-                <li><a href="#">Passwort vergessen?</a></li>
-                <li><a href="#">Mitglied werden?</a></li>
+                <li><a href="$UrlHelper.For("%{controller = 'Profile', action = 'RecoverPassword', area = 'members'}")">Passwort vergessen?</a></li>
+                <li><a href="$UrlHelper.For("%{controller = 'Register', action = 'AccountInformation', area = ''}")">Mitglied werden?</a></li>
             </ol>
         </fieldset>
     </form>
