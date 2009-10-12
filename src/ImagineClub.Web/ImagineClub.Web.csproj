@@ -239,7 +239,8 @@
     <Compile Include="API\EditService.cs" />
     <Compile Include="API\MetaWeblogAPI.cs" />
     <Compile Include="AuthenticationService.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\admin\AdminAuthenticationFilter.cs" />
+    <Compile Include="Controllers\admin\UsersController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\members\AccountController.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="ViewComponents\Login.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Admin\users\List.vm" />
     <None Include="Views\Components\Documents\Documents.vm" />
     <None Include="Views\Home\About.vm" />
     <None Include="Views\Home\Impressum.vm" />
@@ -302,7 +304,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
