@@ -18,3 +18,21 @@
     </tr>
 #end
 </table>
+
+<div class="pagination">
+<table width="100%" border="0">
+  <tr>
+  <td>Showing $members.FirstItemIndex - $members.LastItemIndex of $members.Totalitems</td>
+  <td align="right">
+#if($members.HasPreviousPage) $PaginationHelper.CreatePageLink( 1, "first" ) #end
+#if(!$members.HasPreviousPage) first #end
+#if($members.HasPreviousPage) | $PaginationHelper.CreatePageLink( $members.PreviousPageIndex, "prev" ) #end
+#if(!$members.HasPreviousPage) | prev #end
+#if($members.HasNextPage) | $PaginationHelper.CreatePageLink( $members.NextPageIndex, "next" ) #end
+#if(!$members.HasNextPage) | next #end
+#if($members.HasNextPage) | $PaginationHelper.CreatePageLink( $members.TotalPages, "last" ) #end
+#if(!$members.HasNextPage) | last #end
+  </td>
+  </tr>
+</table>
+</div>
