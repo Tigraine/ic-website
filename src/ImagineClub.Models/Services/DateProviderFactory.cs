@@ -14,7 +14,7 @@ namespace ImagineClub.Web.Models.Services
             {
                 if (_provider == null)
                     _provider = new DateProvider();
-                return Provider;
+                return _provider;
             }
         }
     }

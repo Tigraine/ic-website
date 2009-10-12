@@ -113,6 +113,7 @@
     <Compile Include="Controllers\MemberTestCase.cs" />
     <Compile Include="Controllers\NewsPost_FindRecent.cs" />
     <Compile Include="Infrastructure\UsernameUniqueValidator_Fixture.cs" />
+    <Compile Include="Model\MemberFixture.cs" />
     <Compile Include="Services\HashEncryptionTest.cs" />
     <Compile Include="Services\SecurityServiceFixture.cs" />
     <Compile Include="TestExtensions.cs" />

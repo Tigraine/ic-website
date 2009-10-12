@@ -1,5 +1,6 @@
 namespace ImagineClub.Web.Models
 {
+    using System;
     using System.Security.Principal;
     using Castle.ActiveRecord;
     using Castle.Components.Validator;
@@ -30,6 +31,18 @@ namespace ImagineClub.Web.Models
 
         [Nested]
         public ContactOptions ContactOptions { get; set; }
+
+        [Property]
+        public DateTime AccountExpiration { get; set; }
+
+        public bool IsAccountActive
+        {
+            get
+            {
+                var now = DateProviderFactory.Provider.GetNow();
+                return (AccountExpiration > now);
+            }
+        }
 
         public string Role
         {
