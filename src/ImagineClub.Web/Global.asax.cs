@@ -46,16 +46,19 @@ namespace ImagineClub.Web
                 return;
             var id = GetUserId(cookie);
 
-            Member current = Member.Find(id);
-            if (current == null)
+            using (new SessionScope())
             {
-                //This means that we've a cookie for a user that has been removed, we'll
-                //remove the cookie and redirect to the default page, if the user will
-                //try to log in again, they will get the usual message, and then it is
-                //the IT problem.
-                RemoveAuthCookieAndRedirectToDefaultPage();
+                Member current = Member.Find(id);
+                if (current == null)
+                {
+                    //This means that we've a cookie for a user that has been removed, we'll
+                    //remove the cookie and redirect to the default page, if the user will
+                    //try to log in again, they will get the usual message, and then it is
+                    //the IT problem.
+                    RemoveAuthCookieAndRedirectToDefaultPage();
+                }
+                Context.User = current;
             }
-            Context.User = current;
         }
 
         private long GetUserId(HttpCookie cookie)
