@@ -31,6 +31,14 @@ namespace ImagineClub.Web.Models
         [Nested]
         public ContactOptions ContactOptions { get; set; }
 
+        public string Role
+        {
+            get
+            {
+                if (this is Administrator) return "Administrator";
+                return "Member";
+            }
+        }
 
         public bool IsInRole(string role)
         {

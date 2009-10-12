@@ -14,7 +14,7 @@
         <td>$member.Id</td>
         <td>$member.Username</td>
         <td>$member.Email</td>
-        <td>$member.GetType()</td>
+        <td>$member.Role</td>
     </tr>
 #end
 </table>
