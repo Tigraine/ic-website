@@ -81,5 +81,15 @@ namespace ImagineClub.Web.Models
         {
             return (Username != null ? Username.GetHashCode() : 0);
         }
+
+        public static bool operator ==(Member left, Member right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Member left, Member right)
+        {
+            return !Equals(left, right);
+        }
     }
 }
