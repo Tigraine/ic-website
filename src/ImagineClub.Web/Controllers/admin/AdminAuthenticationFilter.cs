@@ -9,7 +9,7 @@ namespace ImagineClub.Web.Controllers.admin
         public bool Perform(ExecuteWhen exec, IEngineContext context, IController controller, IControllerContext controllerContext)
         {
             if (context.CurrentUser == null || context.CurrentUser.Identity.IsAuthenticated == false
-                || (context.CurrentUser is Administrator))
+                || (!(context.CurrentUser is Administrator)))
             {
                 context.Flash["error"] = "Nur Administratoren haben Zugriff";
                 context.Response.Redirect("", "home", "index");
