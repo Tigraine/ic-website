@@ -288,6 +288,7 @@
     <None Include="Views\layouts\default.vm" />
     <None Include="Views\mail\contact.vm" />
     <None Include="Views\members\Account\Edit.vm" />
+    <None Include="Views\profile\Loginfailed.vm" />
     <None Include="Views\members\profile\RecoverPassword.vm" />
     <None Include="Views\members\profile\RecoveryComplete.vm" />
     <None Include="Views\register\PersonalInformation.vm" />

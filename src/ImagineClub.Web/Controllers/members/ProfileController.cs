@@ -26,11 +26,20 @@ namespace ImagineClub.Web.Controllers
             if (!securityService.AuthenticateUser(username, password))
             {
                 Flash["failure"] = "Benutzername / Kennwort unbekannt";
-                RenderText("Back to home page", "default");
+                RenderView("Profile", "Loginfailed");
                 return;
             }
-            AddAuthenticationTicket(securityService.GetMember(username, password));
-            Redirect("", "Home", "Index");
+            var member = securityService.GetMember(username, password);
+            if (member.IsAccountActive)
+            {
+                AddAuthenticationTicket(member);
+                Redirect("", "Home", "Index");
+            }
+            else
+            {
+                Flash["failure"] = "Benutzer ist inaktiv oder gesperrt";
+                RenderView("Profile", "Loginfailed");
+            }
         }
 
         private void AddAuthenticationTicket(Member member)
