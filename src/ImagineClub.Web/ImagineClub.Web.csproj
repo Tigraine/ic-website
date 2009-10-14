@@ -251,6 +251,7 @@
     <Compile Include="Controllers\members\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RescueController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Validators\UsernameUniqueValidator.cs" />
     <Compile Include="Validators\UsernameUniqueValidatorAttribute.cs" />
@@ -295,6 +296,7 @@
     <None Include="Views\register\AccountInformation.vm" />
     <None Include="Views\register\Thanks.vm" />
     <None Include="Views\rescues\generalerror.vm" />
+    <None Include="Views\Team\List.vm" />
     <None Include="Views\XmlRpc\Manifest.vm" />
     <None Include="Views\XmlRpc\WebLayout.vm" />
   </ItemGroup>

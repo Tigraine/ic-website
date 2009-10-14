@@ -22,7 +22,7 @@ class="active"
 #set($name = "HomeController")
                     <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'About', area = ''}")">About</a></li>
 #set($name = "HomeController")
-                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Services', area = ''}")">Services</a></li>
+                    <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Team', action = 'List', area = ''}")">Team</a></li>
 #set($name = "HomeController")
                     <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Partner', area = ''}")">Partner</a></li>
 #set($name = "ContactController")
@@ -52,7 +52,8 @@ class="active"
             <a href="$UrlHelper.For("%{controller = 'Home', action = 'Impressum', area = ''}")">Impressum</a>
             </p>
             
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Leider ist unsere neue Webseite noch nicht ganz fertig deshalb bitten wir eventuelle Fehler zu entschuldigen. <br />
+            Bitte melden Sie uns Fehler über das Kontaktformular</p>
             
         </div>
     </body>
