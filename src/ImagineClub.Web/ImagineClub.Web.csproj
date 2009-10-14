@@ -215,6 +215,7 @@
     <Content Include="bin\NVelocity.dll" />
     <Content Include="bin\NVelocity.pdb" />
     <Content Include="bin\NVelocity.xml" />
+    <Content Include="Content\css\admin.css" />
     <Content Include="Content\css\site.css" />
     <Content Include="Content\images\active-nav-bg.png" />
     <Content Include="Content\images\active-nav-left.png" />
@@ -272,8 +273,9 @@
   <ItemGroup>
     <None Include="Views\Admin\users\List.vm" />
     <None Include="Views\Components\Documents\Documents.vm" />
-    <None Include="Views\About\About.vm" />
+    <None Include="Views\About\Index.vm" />
     <None Include="Views\Home\Impressum.vm" />
+    <None Include="Views\layouts\admin.vm" />
     <None Include="Views\Partner\List.vm" />
     <None Include="Views\mail\PasswordRecovery.vm" />
     <None Include="Views\mail\Registration.vm" />

@@ -7,10 +7,10 @@ namespace ImagineClub.Web.Controllers.admin
     using NHibernate.Criterion;
 
     [Filter(ExecuteWhen.BeforeAction, typeof(AdminAuthenticationFilter))]
-    [ControllerDetails(Area = "admin")]
-    public class UsersController : ControllerBase
+    [ControllerDetails(Area = "admin"), Layout("admin")]
+    public class UsersController : SmartDispatcherController
     {
-        public const int PAGE_SIZE = 2;
+        public const int PAGE_SIZE = 15;
         public void List([DefaultValue(1)] int page, [DefaultValue("Username")] string order)
         {
             Member[] members = Member.FindAll(Order.Asc(order));

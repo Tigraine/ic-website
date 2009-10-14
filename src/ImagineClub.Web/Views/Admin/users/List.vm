@@ -7,17 +7,20 @@
             <td><a href="List.aspx?order=Username">Username</a></td>
             <td><a href="List.aspx?order=Email">Email</a></td>
             <td>Type</td>
+            <td>Aktiv</td>
         </tr>
     </thead>
 #foreach ($member in $members)
     <tr>
-        <td>$member.Id</td>
+        <td><a href="#MemberId">$member.Id</a></td>
         <td>$member.Username</td>
         <td>$member.Email</td>
         <td>$member.Role</td>
+        <td>$member.IsAccountActive</td>
     </tr>
 #end
 </table>
+
 
 <div class="pagination">
 <table width="100%" border="0">
