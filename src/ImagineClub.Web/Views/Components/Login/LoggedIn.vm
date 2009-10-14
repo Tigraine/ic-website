@@ -4,12 +4,12 @@
         <li><a href="http://msdn40.e-academy.com/elms/Security/Login.aspx?campus=imgc_info"><img src="/Content/images/basket.png" alt="" />MSDN AA</a>
             <span>Microsoft Software herunterladen</span>
         </li>
-        <li><a href="$UrlHelper.For("%{controller = 'Documents', action = 'List', area = 'members'}")"><img src="/Content/images/book_open.png" alt="" />Dokumente</a>
+        <!--<li><a href="$UrlHelper.For("%{controller = 'Documents', action = 'List', area = 'members'}")"><img src="/Content/images/book_open.png" alt="" />Dokumente</a>
             <span>LV Unterlagen herunterladen</span>
         </li>
         <li><a href="$UrlHelper.For("%{controller = 'Documents', action = 'Upload', area = 'members'}")"><img src="/Content/images/book_open.png" alt="" />Hochladen</a>
             <span>LV Unterlagen hochladen</span>
-        </li>
+        </li>-->
         <li><a href="$UrlHelper.For("%{controller = 'Account', action = 'Edit', area = 'members'}")"><img src="/Content/images/user_edit.png" alt="" />Profil</a>
             <span>Einstellungen ändern</span>
         </li>
