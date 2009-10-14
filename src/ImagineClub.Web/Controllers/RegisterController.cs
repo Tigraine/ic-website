@@ -1,10 +1,13 @@
 namespace ImagineClub.Web.Controllers
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using Castle.Components.Validator;
     using Castle.MonoRail.Framework;
     using Helpers;
     using Models;
+    using Models.Services;
     using Validators;
 
     [Layout("default"), Rescue(typeof(RescueController)), Helper(typeof(ValidationHelper))]
@@ -70,9 +73,10 @@ namespace ImagineClub.Web.Controllers
                                  ContactOptions = new ContactOptions {NewsLetterOptIn = true},
                                  Email = accountInfo.Email,
                                  Password = Member.HashPassword(accountInfo.Password),
+                                 AccountExpiration = DateProviderFactory.Provider.MinValue(),
                                  PersonalInformation = new PersonalInformation
                                                            {
-                                                               BirthDay = personalInfo.Birthday,
+                                                               BirthDay = DateTime.Parse(personalInfo.Birthday),
                                                                BirthPlace = personalInfo.BirthPlace,
                                                                Category =
                                                                    Category.GetCategoryByName(personalInfo.Category),
@@ -86,6 +90,10 @@ namespace ImagineClub.Web.Controllers
             if (member.IsValid())
             {
                 member.Save();
+                var parameter = new Dictionary<string, object> {{"user", member}};
+                var message = RenderMailMessage("Registration", null, (IDictionary) parameter);
+                message.Encoding = System.Text.Encoding.UTF8;
+                DeliverEmail(message);
             }
         }
     }
@@ -139,6 +147,6 @@ namespace ImagineClub.Web.Controllers
         public string BirthPlace { get; set; }
 
         [ValidateDateTime("Bitte gib ein gültiges Datum ein")]
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
     }
 }

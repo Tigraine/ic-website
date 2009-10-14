@@ -5,5 +5,6 @@ namespace ImagineClub.Web.Models.Services
     public interface IDateProvider
     {
         DateTime GetNow();
+        DateTime MinValue();
     }
 }
