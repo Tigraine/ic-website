@@ -239,6 +239,7 @@
     <Compile Include="API\EditService.cs" />
     <Compile Include="API\MetaWeblogAPI.cs" />
     <Compile Include="AuthenticationService.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\admin\AdminAuthenticationFilter.cs" />
     <Compile Include="Controllers\admin\UsersController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -271,7 +272,7 @@
   <ItemGroup>
     <None Include="Views\Admin\users\List.vm" />
     <None Include="Views\Components\Documents\Documents.vm" />
-    <None Include="Views\Home\About.vm" />
+    <None Include="Views\About\About.vm" />
     <None Include="Views\Home\Impressum.vm" />
     <None Include="Views\Partner\List.vm" />
     <None Include="Views\mail\PasswordRecovery.vm" />

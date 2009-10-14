@@ -45,10 +45,6 @@ namespace ImagineClub.Web.Controllers
         {
         }
 
-        public void About()
-        {
-        }
-
         public void Impressum()
         {
             
