@@ -271,7 +271,9 @@
     <Compile Include="ViewComponents\Login.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Admin\users\Edit.vm" />
     <None Include="Views\Admin\users\List.vm" />
+    <None Include="Views\Admin\users\ResetPassword.vm" />
     <None Include="Views\Components\Documents\Documents.vm" />
     <None Include="Views\About\Index.vm" />
     <None Include="Views\Home\Impressum.vm" />

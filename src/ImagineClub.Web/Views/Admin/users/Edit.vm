@@ -1,0 +1,47 @@
+﻿<h1>User Editieren</h1>
+
+#if ($info)
+    <p>$info</p>
+#end
+
+<table>
+    <thead>
+        <tr>
+            <td>Feld</td>
+            <td>Wert</td>
+        </tr>
+    </thead>
+
+    <tr>
+        <td>ID</td>
+        <td>$member.Id</td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>$member.Username</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><a href="mailto:$member.Email">$member.Email</a></td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>$member.Username</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>$member.PersonalInformation.Firstname $member.PersonalInformation.Lastname</td>
+    </tr>
+    <tr>
+        <td>Active</td>
+        <td>$member.IsAccountActive</td>
+    </tr>
+</table>
+
+<h3>Aktionen</h3>
+<ul>
+    <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'Resetpassword', area = 'admin', querystring = 'id=$member.Id'}")">Kennwort zurücksetzen</a></li>
+    <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'Unlock', area = 'admin', querystring = 'id=$member.Id'}")">Benutzer freischalten</a></li>
+    <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'Lockout', area = 'admin', querystring = 'id=$member.Id'}")">Benutzer sperren</a></li>
+    <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'Delete', area = 'admin', querystring = 'id=$member.Id'}")">Benutzer löschen</a></li>
+</ul>
