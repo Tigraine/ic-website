@@ -29,7 +29,7 @@ namespace ImagineClub.Web.Controllers
                 RenderText("Back to home page", "default");
                 return;
             }
-            AddAuthenticationTicket(securityService.GetAdministrator(username, password));
+            AddAuthenticationTicket(securityService.GetMember(username, password));
             Redirect("", "Home", "Index");
         }
 

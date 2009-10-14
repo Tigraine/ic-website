@@ -4,5 +4,6 @@ namespace ImagineClub.Web.Models.Services
     {
         bool AuthenticateUser(string username, string password);
         Administrator GetAdministrator(string username, string password);
+        Member GetMember(string username, string password);
     }
 }
