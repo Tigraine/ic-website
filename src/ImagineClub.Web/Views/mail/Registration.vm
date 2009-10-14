@@ -1,17 +1,22 @@
 ﻿to: $user.Email
 from: vorstand@imagineclub.at
 subject: Registrierung bei imagineClub
-Hallo $user.PersonalInformation.Firstname, Willkommen im imagineClub!
+Hallo $user.PersonalInformation.Firstname, willkommen im imagineClub!
 
 Wir freuen uns dich als Mitglied begrüßen zu dürfen!
-Leider müssen wir dich aber bitten persönlich im imagineClub Büro vorstellig zu werden
-und ein altmodisches Beitritts-Formular zu unterschreiben bevor du als vollwertiges Mitglied Zugriff auf unsere Services erhälst.
+Leider müssen wir dich aber bitten persönlich mit deinem Studienausweis ins imagineClub Büro zu kommen,
+und ein altmodisches Beitritts-Formular zu unterschreiben. Dann erhölst Du als vollwertiges Mitglied sofort Zugriff auf unsere Services erhälst.
 
 Das Büro befindet sich in den Geschäftsräumen der 
-Integranova im Lakesidepark B03a. 
+integranova GmbH im Lakesidepark B03 (2. Stock link, Mo-Fr von 08:00 bis 16:00). 
 
-Bei Fragen wende dich bitte per Email an 
+Bei Fragen wende Dich auch jederzeit gerne per Email an 
 vorstand@imagineclub.at
 
 Grüße, 
 imagineClub Team
+
+Horst A. Kandutsch,
+Andreas „Mick“ Griesser,
+Daniel Hölbling
+Marco von Frieling
