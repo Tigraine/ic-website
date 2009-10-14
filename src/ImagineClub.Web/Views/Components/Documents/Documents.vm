@@ -1,3 +1,4 @@
+#if ($documents.Count > 0)
 <div id="quickdownloads">
     <img src="/Content/images/folder_table.png" alt="Downloads Icon" /><h3>Downloads</h3>
     <ol>
@@ -6,3 +7,4 @@
         #end
     </ol>
 </div>
+#end
