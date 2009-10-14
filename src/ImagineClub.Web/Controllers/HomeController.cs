@@ -49,14 +49,6 @@ namespace ImagineClub.Web.Controllers
         {
         }
 
-        public void Services()
-        {
-        }
-
-        public void Partner()
-        {
-        }
-
         public void Impressum()
         {
             

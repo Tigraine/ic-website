@@ -249,6 +249,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\members\MemberControllerBase.cs" />
     <Compile Include="Controllers\members\ProfileController.cs" />
+    <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RescueController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
@@ -272,7 +273,7 @@
     <None Include="Views\Components\Documents\Documents.vm" />
     <None Include="Views\Home\About.vm" />
     <None Include="Views\Home\Impressum.vm" />
-    <None Include="Views\Home\Partner.vm" />
+    <None Include="Views\Partner\List.vm" />
     <None Include="Views\mail\PasswordRecovery.vm" />
     <None Include="Views\mail\Registration.vm" />
     <None Include="Views\members\Documents\Detail.vm" />
