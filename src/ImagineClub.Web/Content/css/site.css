@@ -456,6 +456,11 @@ input, textarea
     padding-right: 8px;
 }
 
+.visited
+{
+    color: black;
+}
+
 textarea
 {
     height: 180px;

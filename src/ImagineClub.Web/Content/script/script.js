@@ -13,4 +13,8 @@
         $(this).hide();
         $("#password").show().focus();
     });
+
+    $("input, textarea").focus(function() {
+        $(this).addClass("visited");
+    });
 });
