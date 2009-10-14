@@ -21,7 +21,7 @@ class="active"
                     <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Index', area = ''}")">News</a></li>
 #set($name = "HomeController")
                     <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'About', area = ''}")">About</a></li>
-#set($name = "HomeController")
+#set($name = "TeamController")
                     <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Team', action = 'List', area = ''}")">Team</a></li>
 #set($name = "HomeController")
                     <li #markAsActive($name)><a href="$UrlHelper.For("%{controller = 'Home', action = 'Partner', area = ''}")">Partner</a></li>
