@@ -8,7 +8,7 @@ class="active"
     <head>
         <link rel="Stylesheet" href="/Content/css/site.css" media="screen" />
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/XmlRpc/manifest.aspx" />
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>iC - imagineClub - Students for Students</title>
     </head>
     
@@ -53,7 +53,7 @@ class="active"
             </p>
             
             <p>Leider ist unsere neue Webseite noch nicht ganz fertig deshalb bitten wir eventuelle Fehler zu entschuldigen. <br />
-            Bitte melden Sie uns Fehler über das Kontaktformular</p>
+            Bitte melden Sie uns Fehler Ã¼ber das Kontaktformular</p>
             
         </div>
     </body>

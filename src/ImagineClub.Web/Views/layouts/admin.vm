@@ -3,7 +3,7 @@
     <head>
         <link rel="Stylesheet" href="/Content/css/admin.css" media="screen" />
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/XmlRpc/manifest.aspx" />
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>iC - imagineClub - Admin</title>
     </head>
     
