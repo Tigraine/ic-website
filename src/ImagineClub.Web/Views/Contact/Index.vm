@@ -16,7 +16,7 @@
         $FormHelper.TextField("ContactRequest.Name")</li>
         <li>$FormHelper.LabelFor("ContactRequest.Email", "Email")
         $FormHelper.TextField("ContactRequest.Email")</li>
-        <li>$FormHelper.LabelFor("ContactRequest.Subject", "Subject")
+        <li>$FormHelper.LabelFor("ContactRequest.Subject", "Betreff")
         $FormHelper.TextField("ContactRequest.Subject")</li>
         <li>$FormHelper.LabelFor("ContactRequest.Text", "Nachricht")
         $FormHelper.TextArea("ContactRequest.Text", "%{rows='14', cols='0'}")</li>
