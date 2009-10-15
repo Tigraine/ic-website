@@ -106,7 +106,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\elmah\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="ElmsConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ElmsConnector, Version=0.1.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\elmsConnector\ElmsConnector.dll</HintPath>
     </Reference>
@@ -230,6 +230,7 @@
     <Content Include="Content\images\login-dummy.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\script\script.js" />
+    <Content Include="Default.aspx" />
     <Content Include="elms.xml" />
     <Content Include="Global.asax" />
     <Content Include="Login.htm" />
@@ -255,6 +256,13 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\RescueController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="RedirectionHandler.cs" />
     <Compile Include="Validators\UsernameUniqueValidator.cs" />
