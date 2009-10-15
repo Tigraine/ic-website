@@ -1,5 +1,9 @@
 <h1>Dem imagineClub beitreten</h1>
 
+<p><b>Info für bestehende Mitglieder: </b><br />Die alten Benutzer Daten wurden erfolgreich migriert, jedoch mussten die Kennwörter zurückgesetzt werden.</b>
+Die Kennwörter können über eingabe der Email-Adresse zurückgesetzt werden<br />
+<em>Wir bitten um Verständnis</em></p>
+
 <form method="post" action="AccountInformation.aspx">
 <fieldset>
     <img src="/Content/images/group_add.png" alt="" /><h3>Deine Informationen</h3>
