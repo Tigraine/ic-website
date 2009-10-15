@@ -267,7 +267,6 @@
     <Compile Include="RedirectionHandler.cs" />
     <Compile Include="Validators\UsernameUniqueValidator.cs" />
     <Compile Include="Validators\UsernameUniqueValidatorAttribute.cs" />
-    <Compile Include="Controllers\XmlRpc.cs" />
     <Compile Include="DefaultValueAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -312,8 +311,6 @@
     <None Include="Views\register\Thanks.vm" />
     <None Include="Views\rescues\generalerror.vm" />
     <None Include="Views\Team\List.vm" />
-    <None Include="Views\XmlRpc\Manifest.vm" />
-    <None Include="Views\XmlRpc\WebLayout.vm" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImagineClub.Models\ImagineClub.Web.Models.csproj">
