@@ -256,6 +256,7 @@
     <Compile Include="Controllers\RescueController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Helpers\ValidationHelper.cs" />
+    <Compile Include="RedirectionHandler.cs" />
     <Compile Include="Validators\UsernameUniqueValidator.cs" />
     <Compile Include="Validators\UsernameUniqueValidatorAttribute.cs" />
     <Compile Include="Controllers\XmlRpc.cs" />
