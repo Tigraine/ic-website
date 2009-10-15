@@ -225,6 +225,11 @@ h2, h1, h3
     text-decoration: underline;
 }
 
+#body-wrap ul, #body-warp ol
+{
+    padding-bottom: 10px;
+}
+
 #body-wrap p
 {
     margin-left: 14px;
