@@ -208,6 +208,11 @@ div#content
     margin-right: 26px;
 }
 
+h1 
+{
+    margin-bottom: 14px;
+}
+
 h2, h1, h3
 {
     font-size: 22px;
@@ -228,6 +233,11 @@ h2, h1, h3
 #body-wrap ul, #body-warp ol
 {
     padding-bottom: 10px;
+}
+
+div.post > p
+{
+    margin-top: 10px;
 }
 
 #body-wrap p
