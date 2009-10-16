@@ -11,7 +11,6 @@ namespace ImagineClub.Web.Models
     public class Member : ValidatedActiveRecordEntity<Member>, IPrincipal
     {
         [ValidateIsUnique]
-        [ValidateLength(6,int.MaxValue)]
         [Property(NotNull = true)]
         public string Username { get; set; }
 
