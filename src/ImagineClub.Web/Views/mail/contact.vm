@@ -1,4 +1,4 @@
-to: tigraine@tigraine.at
+to: tigraine@imagineclub.at
 from: $request.Email
 subject: iC-Kontaktformular: $request.Subject
 Nachricht von $request.Name ($request.Email):

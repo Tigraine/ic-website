@@ -25,6 +25,7 @@ namespace ImagineClub.Web.Controllers
             {
                 var parameter = new Dictionary<string, object> { { "request", request } };
                 var message = RenderMailMessage("contact", null, (IDictionary)parameter);
+                message.Encoding = System.Text.Encoding.UTF8;
                 DeliverEmail(message);
                 RedirectToAction("Thanks");
             }
