@@ -11,7 +11,7 @@
 
         <ol>
             <li>$FormHelper.LabelFor("Password", "Password")
-            $FormHelper.TextField("Password")</li>
+            $FormHelper.PasswordField("Password")</li>
         </ol>
         <input type="submit" id="submit" value="Senden" />
     </fieldset>
