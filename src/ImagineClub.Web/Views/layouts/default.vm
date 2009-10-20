@@ -6,7 +6,7 @@ class="active"
 #end
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
-        <link rel="Stylesheet" href="/Content/css/site.css" media="screen" />
+        <link rel="Stylesheet" href="/Content/css/site.less" media="screen" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" src="/Content/script/script.js"></script>

@@ -130,6 +130,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\castle\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
+    <Reference Include="nLess.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\dotless\nLess.Core.dll</HintPath>
+    </Reference>
     <Reference Include="NVelocity, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\castle\NVelocity.dll</HintPath>
@@ -216,7 +220,8 @@
     <Content Include="bin\NVelocity.pdb" />
     <Content Include="bin\NVelocity.xml" />
     <Content Include="Content\css\admin.css" />
-    <Content Include="Content\css\site.css" />
+    <None Include="Content\css\site.less" />
+    <Content Include="Content\css\test.css" />
     <Content Include="Content\images\active-nav-bg.png" />
     <Content Include="Content\images\active-nav-left.png" />
     <Content Include="Content\images\background-tile.jpg" />
