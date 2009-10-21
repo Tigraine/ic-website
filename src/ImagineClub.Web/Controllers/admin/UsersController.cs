@@ -3,9 +3,11 @@ using Castle.MonoRail.Framework;
 namespace ImagineClub.Web.Controllers.admin
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Reflection;
     using Castle.ActiveRecord;
+    using Castle.Components.Common.EmailSender;
     using Castle.MonoRail.ActiveRecordSupport;
     using Castle.MonoRail.Framework.Helpers;
     using Models;
@@ -33,12 +35,21 @@ namespace ImagineClub.Web.Controllers.admin
             PropertyBag["password"] = GenerateRandomPassword();
         }
 
-        public void ResetPassword([ARFetch("id")] Member member, string password)
+        public void ResetPassword([ARFetch("id")] Member member, string password, bool email)
         {
             using (new SessionScope())
             {
                 member.Password = Member.HashPassword(password);
                 member.Save();
+
+                if (email)
+                {
+                    var dictionary = new Dictionary<string, object>{{"member", member}, {"password", password}};
+                    var message = RenderMailMessage("admin-passwordreset", null, (IDictionary) dictionary);
+                    message.Encoding = System.Text.Encoding.UTF8;
+                    DeliverEmail(message);
+                }
+
                 Flash["info"] = "Password reset";
                 RedirectToAction("Edit", new Dictionary<string, object> {{"id", member.Id}});
             }
