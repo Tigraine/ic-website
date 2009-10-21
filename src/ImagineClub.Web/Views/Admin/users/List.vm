@@ -1,5 +1,9 @@
 ﻿<h1>Users Administration</h1>
 
+#if ($info)
+    <p>$info</p>
+#end
+
 <table>
     <thead>
         <tr>

@@ -11,6 +11,7 @@ namespace ImagineClub.Web.Controllers.admin
     using Castle.MonoRail.ActiveRecordSupport;
     using Castle.MonoRail.Framework.Helpers;
     using Models;
+    using Models.Services;
     using NHibernate.Criterion;
 
     [Filter(ExecuteWhen.BeforeAction, typeof(AdminAuthenticationFilter))]
@@ -75,6 +76,18 @@ namespace ImagineClub.Web.Controllers.admin
 
                 Flash["info"] = String.Format("Account unlocked until {0}", parsedExpiration.ToShortDateString());
                 RedirectToAction("Edit", new Dictionary<string, object> { { "id", member.Id } });
+            }
+        }
+
+        public void Lockout([ARFetch("id")] Member member)
+        {
+            using (new SessionScope())
+            {
+                member.AccountExpiration = DateProviderFactory.Provider.MinValue();
+                member.Save();
+
+                Flash["info"] = String.Format("Account {0} has been locked", member.Username);
+                RedirectToAction("List");
             }
         }
 
