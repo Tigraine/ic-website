@@ -220,7 +220,7 @@
     <Content Include="bin\NVelocity.pdb" />
     <Content Include="bin\NVelocity.xml" />
     <Content Include="Content\css\admin.css" />
-    <None Include="Content\css\site.less" />
+    <Content Include="Content\css\site.css" />
     <Content Include="Content\images\active-nav-bg.png" />
     <Content Include="Content\images\active-nav-left.png" />
     <Content Include="Content\images\background-tile.jpg" />
