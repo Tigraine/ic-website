@@ -7,16 +7,16 @@
 <table>
     <thead>
         <tr>
-            <td><a href="List.aspx?order=Id">Id</a></td>
-            <td><a href="List.aspx?order=Username">Username</a></td>
-            <td><a href="List.aspx?order=Email">Email</a></td>
+            <td>Name</td>
+            <td>Username</td>
+            <td>Email</td>
             <td>Type</td>
             <td>Aktiv</td>
         </tr>
     </thead>
 #foreach ($member in $members)
     <tr>
-        <td><a href="$UrlHelper.For("%{controller = 'Users', action = 'Edit', area = 'admin', querystring = 'id=$member.Id'}")">$member.Id</a></td>
+        <td><a href="$UrlHelper.For("%{controller = 'Users', action = 'Edit', area = 'admin', querystring = 'id=$member.Id'}")">$member.PersonalInformation.Lastname $member.PersonalInformation.Firstname</a></td>
         <td>$member.Username</td>
         <td>$member.Email</td>
         <td>$member.Role</td>
@@ -24,6 +24,17 @@
     </tr>
 #end
 </table>
+
+<div id="search">
+    <form action="List.aspx" method="get">
+        <input type="hidden" name="order" value="$order" />
+        $FormHelper.LabelFor("search", "Search")
+        $FormHelper.TextFieldValue("search", $search)
+        
+        <input type="submit" value="Search" />
+        <a href="List.aspx?order=$order">Clear Search</a>
+    </form>
+</div>
 
 
 <div class="pagination">

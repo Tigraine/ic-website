@@ -14,16 +14,36 @@ namespace ImagineClub.Web.Controllers.admin
     using Models.Services;
     using NHibernate.Criterion;
 
-    [Filter(ExecuteWhen.BeforeAction, typeof(AdminAuthenticationFilter))]
+    [Filter(ExecuteWhen.BeforeAction, typeof (AdminAuthenticationFilter))]
     [ControllerDetails(Area = "admin"), Layout("admin")]
     public class UsersController : SmartDispatcherController
     {
-        public const int PAGE_SIZE = 15;
+        public const int PAGE_SIZE = 30;
+
         public void List([DefaultValue(1)] int page, [DefaultValue("Username")] string order)
         {
+            PropertyBag["order"] = order;
             Member[] members = Member.FindAll(Order.Asc(order));
             PropertyBag["members"] = PaginationHelper.CreatePagination<Member>(members, PAGE_SIZE, page);
         }
+
+        public void List([DefaultValue(1)] int page, [DefaultValue("Username")] string order, string search)
+        {
+            PropertyBag["order"] = order;
+            var crit = DetachedCriteria.For(typeof (Member))
+                .Add(
+                Restrictions.Or(
+                    Restrictions.Or(
+                        Restrictions.Or(
+                            Restrictions.Like("Username", search),
+                            Restrictions.Like("PersonalInformation.Firstname", search)),
+                        Restrictions.Like("PersonalInformation.Lastname", search)),
+                    Restrictions.Like("Email", search)))
+                .AddOrder(Order.Asc(order));
+            var members = Member.FindAll(crit);
+            PropertyBag["members"] = PaginationHelper.CreatePagination<Member>(members, PAGE_SIZE, page);
+        }
+
 
         public void Edit([ARFetch("id")] Member member)
         {
@@ -45,7 +65,7 @@ namespace ImagineClub.Web.Controllers.admin
 
                 if (email)
                 {
-                    var dictionary = new Dictionary<string, object>{{"member", member}, {"password", password}};
+                    var dictionary = new Dictionary<string, object> {{"member", member}, {"password", password}};
                     var message = RenderMailMessage("admin-passwordreset", null, (IDictionary) dictionary);
                     message.Encoding = System.Text.Encoding.UTF8;
                     DeliverEmail(message);
@@ -75,7 +95,7 @@ namespace ImagineClub.Web.Controllers.admin
                 member.Save();
 
                 Flash["info"] = String.Format("Account unlocked until {0}", parsedExpiration.ToShortDateString());
-                RedirectToAction("Edit", new Dictionary<string, object> { { "id", member.Id } });
+                RedirectToAction("Edit", new Dictionary<string, object> {{"id", member.Id}});
             }
         }
 
