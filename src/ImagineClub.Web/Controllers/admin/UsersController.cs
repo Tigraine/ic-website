@@ -2,6 +2,7 @@ using Castle.MonoRail.Framework;
 
 namespace ImagineClub.Web.Controllers.admin
 {
+    using System;
     using System.Collections.Generic;
     using System.Reflection;
     using Castle.ActiveRecord;
@@ -29,6 +30,7 @@ namespace ImagineClub.Web.Controllers.admin
         public void ResetPassword([ARFetch("id")] Member member)
         {
             PropertyBag["member"] = member;
+            PropertyBag["password"] = GenerateRandomPassword();
         }
 
         public void ResetPassword([ARFetch("id")] Member member, string password)
@@ -40,6 +42,16 @@ namespace ImagineClub.Web.Controllers.admin
                 Flash["info"] = "Password reset";
                 RedirectToAction("Edit", new Dictionary<string, object> {{"id", member.Id}});
             }
+        }
+
+        private string GenerateRandomPassword()
+        {
+            var random = new Random();
+            double d = random.NextDouble();
+            string randomPwd =
+                Member.HashPassword(DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString() +
+                                    d);
+            return randomPwd.Substring(0, 6);
         }
     }
 }
