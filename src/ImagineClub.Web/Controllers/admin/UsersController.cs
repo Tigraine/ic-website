@@ -55,6 +55,29 @@ namespace ImagineClub.Web.Controllers.admin
             }
         }
 
+        public void Unlock([ARFetch("id")] Member member)
+        {
+            PropertyBag["member"] = member;
+        }
+
+        public void Unlock([ARFetch("id")] Member member, string expiration)
+        {
+            DateTime parsedExpiration;
+            if (!DateTime.TryParse(expiration, out parsedExpiration))
+            {
+                Flash["error"] = "Date is invalid";
+                return;
+            }
+            using (new SessionScope())
+            {
+                member.AccountExpiration = parsedExpiration;
+                member.Save();
+
+                Flash["info"] = String.Format("Account unlocked until {0}", parsedExpiration.ToShortDateString());
+                RedirectToAction("Edit", new Dictionary<string, object> { { "id", member.Id } });
+            }
+        }
+
         private string GenerateRandomPassword()
         {
             var random = new Random();

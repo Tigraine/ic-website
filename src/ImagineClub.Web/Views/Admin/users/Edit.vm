@@ -36,6 +36,10 @@
         <td>Active</td>
         <td>$member.IsAccountActive</td>
     </tr>
+    <tr>
+        <td>Account Expires</td>
+        <td>$member.AccountExpiration.ToShortDateString()</td>
+    </tr>
 </table>
 
 <h3>Aktionen</h3>

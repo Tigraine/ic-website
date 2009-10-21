@@ -1,0 +1,18 @@
+﻿<h1>Unlock user</h1>
+
+#if ($error)
+    <span class="error">$error</span>
+#end
+
+<form action="Unlock.aspx" method="post">
+    <input type="hidden" name="id" value="$member.id" />
+    <ul>
+        <li>
+            $FormHelper.LabelFor("expiration", "Account expiration date")
+            $FormHelper.TextFieldValue("expiration", "29.01.2010")
+        </li>
+        <li>
+            <input type="submit" value="Unlock" />
+        </li>
+    </ul>
+</form>
