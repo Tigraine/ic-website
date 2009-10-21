@@ -1,6 +1,7 @@
 namespace ImagineClub.Web.ViewComponents
 {
     using Castle.MonoRail.Framework;
+    using Models;
 
     public class Login : ViewComponent
     {
@@ -14,7 +15,11 @@ namespace ImagineClub.Web.ViewComponents
             if (!EngineContext.CurrentUser.Identity.IsAuthenticated)
                 RenderView("Login");
             else
+            {
+                if (EngineContext.CurrentUser as Administrator != null)
+                    PropertyBag["UserIsAdmin"] = true;
                 RenderView("LoggedIn");
+            }
         }
     }
 }
