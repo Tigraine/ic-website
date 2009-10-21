@@ -13,6 +13,11 @@
         <li><a href="$UrlHelper.For("%{controller = 'Account', action = 'Edit', area = 'members'}")"><img src="/Content/images/user_edit.png" alt="" />Profil</a>
             <span>Einstellungen ändern</span>
         </li>
+        #if ($UserIsAdmin == true)
+        <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'List', area = 'admin'}")"><img src="/Content/images/key.png" alt="Administration" />Admin</a>
+            <span>Administration</span>
+        </li>
+        #end
         
         <li class="seperated">$UrlHelper.Link("<img src='/Content/images/door_out.png' alt='' />Logout", "%{action='logout', area='members', controller='Profile'}")</li>
     </ol>
