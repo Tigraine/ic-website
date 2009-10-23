@@ -8,7 +8,9 @@ namespace ImagineClub.Web
     using System.Web;
     using System.Web.Security;
     using Castle.Core.Logging;
+    using Castle.MonoRail.Framework;
     using Castle.Windsor;
+    using Elmah;
 
     public class Global : System.Web.HttpApplication, IContainerAccessor
     {
@@ -59,6 +61,12 @@ namespace ImagineClub.Web
                 }
                 Context.User = current;
             }
+        }
+
+        void ErrorLog_Filtering(object sender, ExceptionFilterEventArgs e)
+        {
+            if (e.Exception.GetBaseException() is ControllerNotFoundException)
+                e.Dismiss();
         }
 
         private long GetUserId(HttpCookie cookie)
