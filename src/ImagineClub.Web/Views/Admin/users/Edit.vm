@@ -48,3 +48,6 @@
     <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'Unlock', area = 'admin', querystring = 'id=$member.Id'}")">Benutzer freischalten</a></li>
     <li><a href="$UrlHelper.For("%{controller = 'Users', action = 'Lockout', area = 'admin', querystring = 'id=$member.Id'}")">Benutzer sperren</a></li>
 </ul>
+
+<br />
+<a href="$UrlHelper.For("%{controller = 'Users', action = 'List', area = 'admin'}")">Zurück zur Übersicht</a>
