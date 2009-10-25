@@ -10,6 +10,7 @@
     <body>
         <div id="wrapper">
             <div id="body-wrap">
+                <a href="/Home/Index.aspx" class="back">Back to imagineclub.at &raquo;</a>
                 $childContent
             </div>
         </div>

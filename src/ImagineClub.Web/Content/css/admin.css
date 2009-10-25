@@ -11,6 +11,12 @@ html, body
     font-size: 12px;
 }
 
+a.back
+{
+    float: right;
+    font-size: large;
+}
+
 #wrapper
 {
     width: 745px;
