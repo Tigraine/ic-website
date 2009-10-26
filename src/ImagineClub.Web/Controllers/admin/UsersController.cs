@@ -29,6 +29,7 @@ namespace ImagineClub.Web.Controllers.admin
 
         public void List([DefaultValue(1)] int page, [DefaultValue("Username")] string order, string search)
         {
+            search = String.Format("%{0}%", search);
             PropertyBag["order"] = order;
             var crit = DetachedCriteria.For(typeof (Member))
                 .Add(
