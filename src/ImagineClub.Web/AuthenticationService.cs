@@ -4,7 +4,7 @@ namespace ImagineClub.Web
     using ElmsConnector;
     using Models.Services;
 
-    public class AuthenticationService : ISessionAuthenticationService
+    public class AuthenticationService : IExtendedAuthenticationService
     {
         private readonly SecurityService _securityService;
 
