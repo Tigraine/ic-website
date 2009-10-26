@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
-        <link rel="Stylesheet" href="/Content/css/admin.css" media="screen" />
+        <link rel="Stylesheet" href="/Content/css/admin.ashx" media="screen" />
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/XmlRpc/manifest.aspx" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>iC - imagineClub - Admin</title>
