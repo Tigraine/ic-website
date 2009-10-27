@@ -3,7 +3,7 @@
   <components>
     <component
       id="AuthenticationService"
-      service="ElmsConnector.ISessionAuthenticationService, ElmsConnector"
+      service="ElmsConnector.IExtendedAuthenticationService, ElmsConnector"
       type="ImagineClub.Web.AuthenticationService, ImagineClubWeb" />
 
     <component
