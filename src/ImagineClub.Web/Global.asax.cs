@@ -67,6 +67,8 @@ namespace ImagineClub.Web
         {
             if (e.Exception.GetBaseException() is ControllerNotFoundException)
                 e.Dismiss();
+            if (e.Exception.GetBaseException() is HttpException)
+                e.Dismiss();
         }
 
         private long GetUserId(HttpCookie cookie)
