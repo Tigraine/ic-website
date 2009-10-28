@@ -1,0 +1,10 @@
+﻿<h1>Delete user</h1>
+
+<p>Do you really want to delete $member.Username?</p>
+<form action="Delete.aspx" method="post">
+    <input type="hidden" name="id" value="$member.Id" id="id" />
+    <input type="hidden" name="confirmation" value="true" id="confirmation" />
+    
+    <a href="Edit.aspx?Id=$member.Id">Cancel</a>
+    <input type="submit" value="Delete" />
+</form>

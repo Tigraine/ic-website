@@ -112,6 +112,24 @@ namespace ImagineClub.Web.Controllers.admin
             }
         }
 
+        public void Delete([ARFetch("id")] Member member)
+        {
+            PropertyBag["member"] = member;
+        }
+
+        public void Delete([ARFetch("id")] Member member, bool confirmation)
+        {
+            if (confirmation)
+            {
+                using (new SessionScope())
+                {
+                    member.DeleteAndFlush();
+                    Flash["info"] = String.Format("Account {0} has been deleted", member.Username);
+                    RedirectToAction("List");
+                }
+            }
+        }
+
         private string GenerateRandomPassword()
         {
             var random = new Random();

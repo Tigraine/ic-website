@@ -284,6 +284,7 @@
     <Compile Include="ViewComponents\Login.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Admin\users\Delete.vm" />
     <None Include="Views\Admin\users\Edit.vm" />
     <None Include="Views\Admin\users\List.vm" />
     <None Include="Views\Admin\users\ResetPassword.vm" />
