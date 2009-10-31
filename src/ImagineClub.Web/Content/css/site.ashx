@@ -31,9 +31,11 @@ a
     display: none;
 }
 
+@width: 745px;
+
 #wrapper
 {
-    width: 745px;
+    width: @width;
     background: url(../images/background.png);
     background-repeat: no-repeat;
    
@@ -48,7 +50,7 @@ a
 {
     position: relative;
     height: 168px;
-    width: 745px;
+    width: @width;
     background: url(../images/footer-bg.png);
     background-position: 23px 0px;
     margin: 0 auto;
@@ -81,12 +83,13 @@ a
     list-style:none;
 }
 
+@header_height: 72px;
 #header ol li
 {
     float: left;
     padding: 0;
     margin: 0px 10px 0px 0px;
-    height: 72px;
+    height: @header_height;
 }
 
 #header ol li:hover, li.active
@@ -107,7 +110,7 @@ a
     padding-top: 20px;
     padding-left: 22px;
     padding-right: 22px;
-    height: 72px;
+    height: @header_height;
     text-decoration: none;
     color: Black;
 }
@@ -154,6 +157,7 @@ a
 
 
 /* Tiny Date */
+@dateColor: #959595;
 div.date
 {
     -moz-border-radius: 7px;
@@ -161,7 +165,7 @@ div.date
     width: 47px;
     height: 32px;
     background: white;
-    color: #959595;
+    color: @dateColor;
     padding: 0;
     float: left;
     padding-left: 4px;
@@ -181,7 +185,7 @@ div.date hr
     width: 11px;
     border: none;
     border-top: 1px solid #e1dfdf;
-    background: #959595;
+    background: @dateColor;
     margin: 0;
     padding: 0;
 }
