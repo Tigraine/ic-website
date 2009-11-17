@@ -1,3 +1,12 @@
 ﻿<h1>Das Team</h1>
+<div id="team">
+    <h2>Andreas Grießer, Obmann</h2>
+    <img src="/Content/images/mick.jpg" alt="Andreas Grießer Portrait" /><p>Andreas Grießer ist Forschungsassistent an der Universität Klagenfurt, dort arbeitet er gemeinsam mit BMLVS und BMI an dem Projekt C2DSAS. Im Rahmen des nationalen KIRAS Sicherheitsprogrammes forscht er an der Anwendbarkeit von Methoden aus der künstlicher Intelligenz zur Entscheidungsunterstützung in komplexen Entscheidungssituationen der österreichischen Landesverteidigung.</p>
 
-<p>Leider ist unsere neue Webseite noch nicht ganz fertig deshalb steht hier leider noch nichts.</p>
+    <h2>Daniel Hölbling, Stv. Obmann</h2>
+    <img src="/Content/images/daniel.jpg" alt="Daniel Hölbling Portrait" /><p>Daniel Hölbling ist Student der Angewandten Informatik an der Universität Klagenfurt. <br />In seiner Freizeit arbeitet er an Open-Source Projekten in der .NET Welt und schreibt darüber auch in seinem Blog unter <a href="http://www.tigraine.at">http://www.tigraine.at</a>. Als imagineClub Neuling ist er außerdem für die Wartung und <a href="http://github.com/Tigraine/ic-website">Programmierung der Webseite</a> inkl der <a href="http://github.com/Tigraine/elms-connector">ELMS-Schnittstelle</a> zuständig</p>
+
+    <h2>DI Horst A. Kandutsch, Kassier</h2>
+    <img src="/Content/images/horst.jpg" alt="DI Horst A. Kandutsch Portrait" /><p>DI Horst A. Kandutsch ist Geschäftsstellenleiter des Softwaredienstleisters integranova und Doktorant an der AAUK. Im Rahmen seiner Dissertatin AVAnguide, ein mittlerweile FFG gefördertes Projekt, forscht er an Möglichkeiten den Softwareentwicklungsprozess zu optimieren. Sein Ansatz zielt vor allem auf optimales RE und dadurch reduzierten Testaufwand ab.
+    Als einer der Gründer des imagineClubs, bleibt er ihm gerne als Vorstandsmitglied treu und freut sich euch mit Rat und Tat zur Seite stehen zu dürfen!</p>
+</div>

@@ -203,6 +203,7 @@ div.date span.year, div.date span.month
     margin-left: 45px;
     margin-top: 50px;
     margin-right: 60px;
+    overflow: hidden;
 }
 
 div#content
@@ -210,6 +211,7 @@ div#content
     margin-bottom: 30px;
     width: 414px;
     margin-right: 26px;
+    float: left;
 }
 
 h1 
@@ -617,4 +619,24 @@ div#filedownload span
 {
     display: block;
     margin-top: 10px;
+}
+
+
+div#team
+{
+    width: 414px;
+    p
+    {
+        float: right;
+        width: 300px;
+    }
+    h2
+    {
+        clear: right;
+    }
+    img
+    {  
+        width: 100px;
+        margin-bottom: 4px;
+    }
 }
