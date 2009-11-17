@@ -219,9 +219,10 @@ h1
     margin-bottom: 14px;
 }
 
+@title-fontsize: 22px;
 h2, h1, h3
 {
-    font-size: 22px;
+    font-size: @title-fontsize;
     font-weight: bold;
     font-family: "Trebuchet MS";
 }
@@ -633,6 +634,7 @@ div#team
     h2
     {
         clear: right;
+        font-size: @title-fontsize - 4;
     }
     img
     {  
