@@ -8,3 +8,4 @@ _ReSharper.*/**
 *.suo
 *.Publish.xml
 *.resharper
+Thumbs.db
