@@ -20,7 +20,7 @@ namespace ImagineClub.Web
         protected void Application_Start(object sender, EventArgs e)
         {
             container = new ImagineClubContainer();
-            HibernatingRhinos.NHibernate.Profiler.Appender.NHibernateProfiler.Initialize();
+            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
 
             ActiveRecordStarter.Initialize(
                 typeof(Member).Assembly,

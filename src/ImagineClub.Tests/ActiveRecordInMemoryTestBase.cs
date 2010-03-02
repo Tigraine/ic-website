@@ -9,7 +9,7 @@ namespace ImagineClub.Tests
     {
         public ActiveRecordInMemoryTestBase()
         {
-            HibernatingRhinos.NHibernate.Profiler.Appender.NHibernateProfiler.Initialize();
+            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
             if (!ActiveRecordStarter.IsInitialized)
                 Initialize();
             ActiveRecordStarter.CreateSchema();

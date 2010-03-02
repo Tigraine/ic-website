@@ -25,12 +25,12 @@ namespace ImagineClub.Web.Models
         [ValidateNonEmpty]
         public string Text { get; set; }
 
-        [HasMany(Fetch = FetchEnum.Join)]
+        [HasMany]
         public IList<Comment> Comments { get; set;}
 
         public static NewsPost[] FindRecent(int posts)
         {
-            DetachedCriteria criteria = DetachedCriteria.For(typeof (NewsPost))
+            DetachedCriteria criteria = DetachedCriteria.For(typeof(NewsPost))
                 .AddOrder(Order.Desc("PostDate"))
                 .SetMaxResults(posts);
             return FindAll(criteria);
