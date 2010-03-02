@@ -39,6 +39,7 @@
         $FormHelper.TextArea("Comment.Text")
         </li>
     </ol>
-    <input type="submit" value="Absenden" />
+    <p>Kommentare wurden aufgrund von Spam deaktiviert</p>
+    <input type="submit" value="Absenden" disabled="disabled" />
 </fieldset>
 </form>

@@ -6,27 +6,27 @@ namespace ImagineClub.Tests.Controllers
 
     public class CommentsBehaviorTests : GenericDatabaseDependantControllerTest<HomeController>
     {
-        [Fact]
-        public void Detail_Comment_CanBeInserted()
-        {
-            var admin = ObjectMother.GetAdminAndSaveToDatabase();
-            var post = ObjectMother.CreateManyPosts(1, admin)[0];
+        //[Fact]
+        //public void Detail_Comment_CanBeInserted()
+        //{
+        //    var admin = ObjectMother.GetAdminAndSaveToDatabase();
+        //    var post = ObjectMother.CreateManyPosts(1, admin)[0];
 
-            var homeController = new HomeController();
-            PrepareController(homeController);
+        //    var homeController = new HomeController();
+        //    PrepareController(homeController);
 
-            var comment = new Comment
-                              {
-                                  CommentIp = "127.0.0.1",
-                                  Name = "Testcomment",
-                                  Text = "Hello"
-                              };
+        //    var comment = new Comment
+        //                      {
+        //                          CommentIp = "127.0.0.1",
+        //                          Name = "Testcomment",
+        //                          Text = "Hello"
+        //                      };
 
-            homeController.Detail(post, comment);
-            post = NewsPost.Find(post.Id);
-            Assert.Equal(1, post.Comments.Count);
-            Assert.Equal(comment.Id, post.Comments[0].Id);
-        }
+        //    homeController.Detail(post, comment);
+        //    post = NewsPost.Find(post.Id);
+        //    Assert.Equal(1, post.Comments.Count);
+        //    Assert.Equal(comment.Id, post.Comments[0].Id);
+        //}
 
         [Fact]
         public void Detail_FetchesComments()

@@ -26,20 +26,20 @@ namespace ImagineClub.Web.Controllers
             PropertyBag["post"] = post;
         }
 
-        public void Detail([ARFetch("id")] NewsPost post, [DataBind("Comment")] Comment comment)
-        {
-            if (comment.IsValid())
-            {
-                var addComment = new AddComment(post, comment, Context);
-                addComment.Execute();
-                RedirectToAction("Thanks", new NameValueCollection(){ {"Id", post.Id.ToString()}});
-            }
-            else
-            {
-                PropertyBag["post"] = post;
-                PropertyBag["Comment"] = comment;
-            }
-        }
+        //public void Detail([ARFetch("id")] NewsPost post, [DataBind("Comment")] Comment comment)
+        //{
+        //    if (comment.IsValid())
+        //    {
+        //        var addComment = new AddComment(post, comment, Context);
+        //        addComment.Execute();
+        //        RedirectToAction("Thanks", new NameValueCollection(){ {"Id", post.Id.ToString()}});
+        //    }
+        //    else
+        //    {
+        //        PropertyBag["post"] = post;
+        //        PropertyBag["Comment"] = comment;
+        //    }
+        //}
 
         public void Thanks()
         {
