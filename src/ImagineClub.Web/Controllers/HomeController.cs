@@ -17,7 +17,8 @@ namespace ImagineClub.Web.Controllers
             using(new SessionScope())
             {
                 IList<NewsPost> posts = NewsPost.FindRecent(PageSize * 4);
-                PropertyBag["news"] = PaginationHelper.CreatePagination(posts, PageSize, page); 
+                PropertyBag["news"] = posts;
+                //PaginationHelper.CreatePagination(posts, PageSize, page); 
             }
         }
 
