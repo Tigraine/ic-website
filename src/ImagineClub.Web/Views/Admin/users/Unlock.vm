@@ -9,7 +9,7 @@
     <ul>
         <li>
             $FormHelper.LabelFor("expiration", "Account expiration date")
-            $FormHelper.TextFieldValue("expiration", "29.01.2010")
+            $FormHelper.TextFieldValue("expiration", "07.07.2010")
         </li>
         <li>
             <input type="submit" value="Unlock" />
