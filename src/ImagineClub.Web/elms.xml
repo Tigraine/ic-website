@@ -5,6 +5,10 @@
       id="AuthenticationService"
       service="ElmsConnector.IExtendedAuthenticationService, ElmsConnector"
       type="ImagineClub.Web.AuthenticationService, ImagineClubWeb" />
+    <component
+      id="AuthenticationServiceNormal"
+      service="ElmsConnector.IAuthenticationService, ElmsConnector"
+      type="ImagineClub.Web.AuthenticationService, ImagineClubWeb" />
 
     <component
       id="ElmsSessionRequestService">
