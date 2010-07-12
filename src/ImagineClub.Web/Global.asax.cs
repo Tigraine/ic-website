@@ -93,7 +93,7 @@ namespace ImagineClub.Web
         private void RemoveAuthCookieAndRedirectToDefaultPage()
         {
             FormsAuthentication.SignOut();
-            Response.Redirect("/home/default.rails", true);
+            Response.Redirect("/Home/Index.aspx", true);
         }
 
         protected void Application_Error(object sender, EventArgs e)

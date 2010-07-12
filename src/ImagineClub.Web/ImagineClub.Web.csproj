@@ -26,6 +26,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -211,7 +214,6 @@
     <Content Include="bin\Castle.MonoRail.Framework.dll" />
     <Content Include="bin\Castle.MonoRail.Framework.pdb" />
     <Content Include="bin\Castle.MonoRail.Framework.Views.NVelocity.dll" />
-    <Content Include="bin\Castle.MonoRail.Framework.Views.NVelocity.xml" />
     <Content Include="bin\Castle.MonoRail.Framework.xml" />
     <Content Include="bin\ElmsConnector.dll" />
     <Content Include="bin\ElmsConnector.pdb" />
