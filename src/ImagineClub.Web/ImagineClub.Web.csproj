@@ -236,14 +236,34 @@
     <Content Include="Content\images\active-nav-left.png" />
     <Content Include="Content\images\background-tile.jpg" />
     <Content Include="Content\images\background.png" />
+    <Content Include="Content\images\basket.png" />
+    <Content Include="Content\images\book_open.png" />
     <Content Include="Content\images\button-bg.png" />
+    <Content Include="Content\images\daniel.jpg" />
+    <Content Include="Content\images\door_out.png" />
+    <Content Include="Content\images\download.png" />
     <Content Include="Content\images\dummy2.png" />
     <Content Include="Content\images\dummy1.png" />
     <Content Include="Content\images\email_edit.png" />
     <Content Include="Content\images\fieldset-top-bg.png" />
+    <Content Include="Content\images\fileicons\page_white.png" />
+    <Content Include="Content\images\fileicons\page_white_acrobat.png" />
+    <Content Include="Content\images\fileicons\page_white_code.png" />
+    <Content Include="Content\images\fileicons\page_white_excel.png" />
+    <Content Include="Content\images\fileicons\page_white_office.png" />
+    <Content Include="Content\images\fileicons\page_white_picture.png" />
+    <Content Include="Content\images\fileicons\page_white_powerpoint.png" />
+    <Content Include="Content\images\fileicons\page_white_word.png" />
+    <Content Include="Content\images\fileicons\page_white_zip.png" />
+    <Content Include="Content\images\folder_table.png" />
     <Content Include="Content\images\footer-bg.png" />
+    <Content Include="Content\images\group_add.png" />
+    <Content Include="Content\images\horst.jpg" />
+    <Content Include="Content\images\key.png" />
     <Content Include="Content\images\login-dummy.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\mick.jpg" />
+    <Content Include="Content\images\user_edit.png" />
     <Content Include="Content\script\script.js" />
     <Content Include="Default.aspx" />
     <Content Include="elms.xml">
@@ -300,7 +320,9 @@
     <None Include="Views\Admin\users\Delete.vm" />
     <None Include="Views\Admin\users\Edit.vm" />
     <None Include="Views\Admin\users\List.vm" />
-    <None Include="Views\Admin\users\ResetPassword.vm" />
+    <None Include="Views\Admin\users\ResetPassword.vm">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Views\Admin\users\Unlock.vm" />
     <None Include="Views\Components\Documents\Documents.vm" />
     <None Include="Views\About\Index.vm" />
