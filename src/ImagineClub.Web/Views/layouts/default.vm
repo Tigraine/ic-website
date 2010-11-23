@@ -49,7 +49,7 @@ class="active"
             <h6>imagineClub</h6> 
             <p class="imprint">imagineClub<br />
             ZVR: 990257259<br />
-            Lakesidepark B07b, 9020,<br />
+            Lakesidepark B03, 9020,<br />
             <a href="mailto:vorstand@imagineclub.at">vorstand@imagineclub.at</a>
             <a href="$UrlHelper.For("%{controller = 'Home', action = 'Impressum', area = ''}")">Impressum</a>
             </p>
