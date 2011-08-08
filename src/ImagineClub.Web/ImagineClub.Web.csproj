@@ -216,7 +216,6 @@
     <Content Include="bin\Castle.MonoRail.Framework.Views.NVelocity.dll" />
     <Content Include="bin\Castle.MonoRail.Framework.xml" />
     <Content Include="bin\ElmsConnector.dll" />
-    <Content Include="bin\ElmsConnector.pdb" />
     <Content Include="bin\Iesi.Collections.dll" />
     <Content Include="bin\Iesi.Collections.xml" />
     <Content Include="bin\ImagineClub.Web.Models.dll" />
