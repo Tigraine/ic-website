@@ -5,6 +5,9 @@ namespace ImagineClub.Web.Controllers.admin
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Configuration;
+    using System.Data;
+    using System.Data.SqlClient;
     using System.Reflection;
     using Castle.ActiveRecord;
     using Castle.Components.Common.EmailSender;
@@ -13,6 +16,28 @@ namespace ImagineClub.Web.Controllers.admin
     using Models;
     using Models.Services;
     using NHibernate.Criterion;
+
+    public class Entry
+    {
+        public long Id { get; set; }
+        public string Type { get; set; }
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public DateTime AccountExpiration { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string MatrNr { get; set; }
+        public string Street { get; set; }
+        public string ZipCode { get; set; }
+        public string City { get; set; }
+        public string Category { get; set; }
+        public string Birthplace { get; set; }
+        public string Nationality { get; set; }
+        public DateTime Birthday { get; set; }
+        public string Title { get; set; }
+        public string Telephone { get; set; }
+    }
 
     [Filter(ExecuteWhen.BeforeAction, typeof (AdminAuthenticationFilter))]
     [ControllerDetails(Area = "admin"), Layout("admin")]
@@ -43,6 +68,53 @@ namespace ImagineClub.Web.Controllers.admin
                 .AddOrder(Order.Asc(order));
             var members = Member.FindAll(crit);
             PropertyBag["members"] = PaginationHelper.CreatePagination<Member>(members, PAGE_SIZE, page);
+        }
+        private T Cast<T>(DataRow row, string property) where T : class 
+        {
+            if (row[property] is DBNull)
+                return null;
+            return (T)row[property];
+        }
+        [Layout("none")]
+        public void Dump()
+        {
+            var sqlConnection = new SqlConnection("Server=.;Initial Catalog=ic;Integrated Security=True;");
+            sqlConnection.Open();
+            var cmd = sqlConnection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM Members";
+            var reader = new SqlDataAdapter(cmd);
+            var ds = new DataSet();
+            reader.Fill(ds);
+            var results = new List<Entry>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                var entry = new Entry()
+                                {
+                                    Id = (long) row["Id"],
+                                    Type = Cast<string>(row, "Type"),
+                                    Username = Cast<string>(row, "Username"),
+                                    Email = Cast<string>(row, "Email"),
+                                    Password = Cast<string>(row, "Password"),
+                                    AccountExpiration = (DateTime) row["AccountExpiration"],
+                                    Firstname = Cast<string>(row, "Firstname"),
+                                    Lastname = Cast<string>(row, "Lastname"),
+                                    MatrNr = Cast<string>(row, "MatrNr"),
+                                    Street = Cast<string>(row, "Street"),
+                                    ZipCode = Cast<string>(row, "ZipCode"),
+                                    City = Cast<string>(row, "City"),
+                                    Category = Cast<string>(row, "Category"),
+                                    Birthplace = Cast<string>(row, "Birthplace"),
+                                    Nationality = Cast<string>(row, "Nationality"),
+                                    Birthday = (DateTime) row["Birthday"],
+                                    Title = Cast<string>(row, "Title"),
+                                    Telephone = Cast<string>(row, "Telephone"),
+                                };
+
+                results.Add(entry);
+            }
+
+            PropertyBag["ds"] = results;
+            sqlConnection.Close();
         }
 
 

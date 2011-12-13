@@ -270,8 +270,11 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Login.htm" />
+    <None Include="Views\Admin\users\Dump.vm" />
     <None Include="Views\mail\admin-passwordreset.vm" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\BloggerAPI.cs" />

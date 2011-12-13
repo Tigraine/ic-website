@@ -1,0 +1,3 @@
+﻿#foreach ($member in $ds)
+INSERT INTO Members (Id, [Type], Username, Email, [Password], AccountExpiration, Firstname, Lastname, MatrNr, Street, ZipCode, City,Category, Birthplace, Nationality, Birthday, Title, Telephone, NewsletterOptIn) VALUES ($member.Id, '$member.Type', '$member.Username', '$member.Email', '$member.Password', '$member.AccountExpiration', '$member.Firstname', '$member.Lastname', '$member.MatrNr', '$member.Street', '$member.ZipCode', '$member.City', '$member.Category', '$member.Birthplace', '$member.Nationality', '$member.Birthday', '$member.Title','$member.Telephone', 0);
+#end
