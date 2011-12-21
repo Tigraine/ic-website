@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace ImagineClub.Web.Controllers
 {
     using System;
@@ -76,7 +78,7 @@ namespace ImagineClub.Web.Controllers
                                  AccountExpiration = DateProviderFactory.Provider.MinValue(),
                                  PersonalInformation = new PersonalInformation
                                                            {
-                                                               BirthDay = DateTime.Parse(personalInfo.Birthday),
+                                                               BirthDay = GetOptionalDateTime(personalInfo.Birthday),
                                                                BirthPlace = personalInfo.BirthPlace,
                                                                Category =
                                                                    Category.GetCategoryByName(personalInfo.Category),
@@ -95,6 +97,11 @@ namespace ImagineClub.Web.Controllers
                 message.Encoding = System.Text.Encoding.UTF8;
                 DeliverEmail(message);
             }
+        }
+
+        private static DateTime? GetOptionalDateTime(string str)
+        {
+            return String.IsNullOrEmpty(str) ? null : (DateTime?) DateTime.Parse(str);
         }
     }
 
@@ -147,6 +154,7 @@ namespace ImagineClub.Web.Controllers
         public string BirthPlace { get; set; }
 
         [ValidateDateTime("Bitte gib ein gültiges Datum ein")]
+        [ValidateRegExp("([0-9]{1,2}[\\.-][0-9]{1,2}[\\.-][0-9]{4})?", "Datumsfeld - Bitte gib ein Datum im Format TT.MM.YYYY ein.")]
         public string Birthday { get; set; }
     }
 }
